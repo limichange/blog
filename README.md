@@ -1,2 +1,3 @@
-# blog
-博客，琐事，技术
+# Limichange Blog
+
+请移驾到 issues，谢谢合作

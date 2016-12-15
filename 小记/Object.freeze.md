@@ -24,7 +24,7 @@ https://segmentfault.com/a/1190000003894119
 Object.freeze(obj);
 
 obj.key = `value`; // no way!
-```
+``
 
 在严格模式下会报类型错误（TypeError），
 然后就是对象里面的对象不受影响（浅冻结），

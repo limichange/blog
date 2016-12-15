@@ -7,13 +7,13 @@ NPM做的还是比较简单的。
 ```bash
 ➜  dir git:(master) ✗ npm outdated
 Package                Current  Wanted  Latest  Location
-autoprefixer             6.5.3   6.5.4   6.5.4  moment2
-css-loader              0.25.0  0.25.0  0.26.1  moment2
-eslint                  3.12.0  3.12.2  3.12.2  moment2
-eslint-plugin-promise    2.0.1   2.0.1   3.4.0  moment2
-node-sass               3.13.1  3.13.1   4.0.0  moment2
-sass-loader              4.0.2   4.1.0   4.1.0  moment2
-webpack-merge           0.14.1  0.14.1   1.1.1  moment2
+autoprefixer             6.5.3   6.5.4   6.5.4  dir
+css-loader              0.25.0  0.25.0  0.26.1  dir
+eslint                  3.12.0  3.12.2  3.12.2  dir
+eslint-plugin-promise    2.0.1   2.0.1   3.4.0  dir
+node-sass               3.13.1  3.13.1   4.0.0  dir
+sass-loader              4.0.2   4.1.0   4.1.0  dir
+webpack-merge           0.14.1  0.14.1   1.1.1  dir
 ```
 
 必要的话瞅瞅升级的细节，
@@ -30,12 +30,12 @@ sudo npm update eslint
 ```bash
 ➜  dir git:(master) ✗ npm outdated
 Package                Current  Wanted  Latest  Location
-autoprefixer             6.5.3   6.5.4   6.5.4  moment2
-css-loader              0.25.0  0.25.0  0.26.1  moment2
-eslint-plugin-promise    2.0.1   2.0.1   3.4.0  moment2
-node-sass               3.13.1  3.13.1   4.0.0  moment2
-sass-loader              4.0.2   4.1.0   4.1.0  moment2
-webpack-merge           0.14.1  0.14.1   1.1.1  moment2
+autoprefixer             6.5.3   6.5.4   6.5.4  dir
+css-loader              0.25.0  0.25.0  0.26.1  dir
+eslint-plugin-promise    2.0.1   2.0.1   3.4.0  dir
+node-sass               3.13.1  3.13.1   4.0.0  dir
+sass-loader              4.0.2   4.1.0   4.1.0  dir
+webpack-merge           0.14.1  0.14.1   1.1.1  dir
 ```
 
 完美。

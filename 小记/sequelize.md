@@ -83,3 +83,6 @@ sequelize migration:create --name init --options-path sequelizeOptions
 估计就是设计的这个样子，
 还得自己写一个脚本简化一下这个命令，
 每次执行都得写这么多蛮麻烦的。
+
+> 项目地址
+> git@github.com:limichange/sequelize-demo.git

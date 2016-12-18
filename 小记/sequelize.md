@@ -85,4 +85,4 @@ sequelize migration:create --name init --options-path sequelizeOptions
 每次执行都得写这么多蛮麻烦的。
 
 > 项目地址
-> git@github.com:limichange/sequelize-demo.git
+> https://github.com/limichange/sequelize-demo

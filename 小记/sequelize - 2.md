@@ -187,3 +187,6 @@ Using environment "development".
 ok，
 这样我们之后对数据库操作都通过这个脚本来进行，
 下回我们写增删改查。
+
+> 项目地址
+> https://github.com/limichange/sequelize-demo

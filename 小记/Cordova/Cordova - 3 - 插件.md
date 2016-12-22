@@ -28,6 +28,7 @@ onDeviceReady: function() {
     }
 
     function onFail(message) {
+        navigator.notification.alert(message);
         alert('Failed because: ' + message);
     }
 },
@@ -37,24 +38,35 @@ onDeviceReady: function() {
 不但能控制图片的质量还可以选择调用摄像头的方向，
 拍照成功后会返回图片的临时地址。
 
-## cordova-plugin-file-transfer
+## cordova-plugin-dialogs
 
-http://cordova.apache.org/docs/en/latest/reference/cordova-plugin-file-transfer/index.html
+http://cordova.apache.org/docs/en/latest/reference/cordova-plugin-dialogs/index.html
 
-*看文档中*
-
-文件传输，
-用于文件的上传下载，
-我们专门来看看上传是什么样的。
+直接用alert的话会出现弹窗显示标题的问题，
+所以需要一个插件调用系统的弹窗。
 
 ```shell
-$ cordova plugin add cordova-plugin-file-transfer
+# 安装
+$ cordova plugin add cordova-plugin-dialogs
 ```
 
-安装成功后，
-检查一下这个模块的对象有没有加载成功。
+这几个方法都是可用的。
+ - navigator.notification.alert
+ - navigator.notification.confirm
+ - navigator.notification.prompt
+ - navigator.notification.beep
+
+在代码直接调用即可。
+
 ```js
-alert(FileTransfer);
-```
+// 简单用法
+navigator.notification.alert('这是一个弹窗');
 
-看起来没有什么问题。
+// 所用选项
+navigator.notification.alert(
+    '内容',
+    function () { alert('回调') },
+    '标题',
+    '按钮'
+);
+```

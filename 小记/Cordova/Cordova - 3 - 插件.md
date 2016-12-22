@@ -41,6 +41,8 @@ onDeviceReady: function() {
 
 http://cordova.apache.org/docs/en/latest/reference/cordova-plugin-file-transfer/index.html
 
+*看文档中*
+
 文件传输，
 用于文件的上传下载，
 我们专门来看看上传是什么样的。
@@ -52,5 +54,7 @@ $ cordova plugin add cordova-plugin-file-transfer
 安装成功后，
 检查一下这个模块的对象有没有加载成功。
 ```js
-console.log(FileTransfer);
+alert(FileTransfer);
 ```
+
+看起来没有什么问题。

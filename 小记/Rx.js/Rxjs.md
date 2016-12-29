@@ -14,6 +14,9 @@ RxJS is a library for composing asynchronous and event-based programs by using o
 
 迭代器模式。
 
+## 调试模板
+https://jsfiddle.net/yztmb0dz/
+
 ## 开始
 
 开头是一个点，

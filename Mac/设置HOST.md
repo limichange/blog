@@ -14,6 +14,11 @@
 ::1             localhost
 ```
 
+别忘了更新生效，
+```bash
+$ dscacheutil -flushcache
+```
+
 完。
 
 ## 参考

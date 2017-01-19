@@ -50,3 +50,8 @@ babel没有处理这个包。
 ```
 
 看来开源库的代码还是得转成ES5才能通用。
+
+## 相关
+https://github.com/webpack/webpack/issues/2031
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+http://stackoverflow.com/questions/33001237/webpack-not-excluding-node-modules

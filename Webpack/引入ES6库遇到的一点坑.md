@@ -6,8 +6,10 @@ dev的时候没有什么问题。
 但当我发布的时候，
 报错了。
 
+```bash
 ERROR in static/js/vendor.6adc67b5894d6ddb4ff5.js from UglifyJs
 SyntaxError: Unexpected token operator «=», expected punc «,» [./~/qiniu-image-view2/src/index.js:8,0]
+```
 
 触不及防。
 
@@ -19,7 +21,7 @@ SyntaxError: Unexpected token operator «=», expected punc «,» [./~/qiniu-ima
 babel没有处理这个包。
 
 看看webpack的配置就明白了。
-```
+```js
 {
   test: /\.js$/,
   loader: 'babel',
@@ -37,7 +39,7 @@ babel没有处理这个包。
 但我老是报错，
 于是只好用这个方法了，
 还比较直观一点。
-```
+```js
 {
   test: /\.js$/,
   loader: 'babel',

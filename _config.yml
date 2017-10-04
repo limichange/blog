@@ -42,7 +42,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -51,7 +51,7 @@ index_generator:
   path: ''
   per_page: 10
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -74,10 +74,12 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
-disqus:
-  enable: true
-  shortname: limichange
-  count: true
+algolia:
+  applicationID: 'KZ8H31F2HO'
+  apiKey: '7cce19690b59c1203a116bec55f8c201'
+  adminApiKey: 'a65efa6f0e5390ff14464bbfeb40538c'
+  indexName: 'index'
+  chunkSize: 5000
 
 seo: true
 

@@ -6,4 +6,4 @@ tags:
 
 # ⛩ Limichange Blog
 
-> 宁可十年不将军，不可一日不拱卒
+> 老是胃疼

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts":{
-    "deploy": "git add --all && git commit -am 'Update' && gp && hexo generate && hexo algolia && hexo deploy"
+    "deploy": "git add --all && git commit -am 'Update' && git push && hexo generate && hexo algolia && hexo deploy"
   },
   "hexo": {
     "version": "3.3.9"

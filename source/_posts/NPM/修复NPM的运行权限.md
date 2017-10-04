@@ -1,3 +1,9 @@
+---
+title: 修复NPM的运行权限
+date: 2016-09-04 10:48:11
+tags: [npm, shell]
+---
+
 这个问题困扰了我好久，
 我一直都没有理，
 但是我现在意识到输密码这个动作浪费了我太多的时间，
@@ -5,6 +11,7 @@
 
 官方已经给了解决的方法了（呆
 https://docs.npmjs.com/getting-started/fixing-npm-permissions
+
 ```shell
 $ npm config get prefix
 /usr/local

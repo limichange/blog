@@ -1,4 +1,8 @@
-## update-notifier
+---
+title: update-notifier
+date: 2017-01-01 10:48:11
+tags: nodejs
+---
 
 > Update notifications for your CLI app
 

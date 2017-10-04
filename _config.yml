@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Limichange Blog
 subtitle:
 description:
 author: Limichange
-language:
+language: en
 timezone:
 
 # URL
@@ -78,6 +78,8 @@ disqus:
   enable: true
   shortname: limichange
   count: true
+
+seo: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

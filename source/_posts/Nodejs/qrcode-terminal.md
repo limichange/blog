@@ -1,3 +1,9 @@
+---
+title: qrcode-terminal
+date: 2017-01-01 10:48:11
+tags: nodejs
+---
+
 ## 场景
 
 就是在命令行里的打印一个二维码，

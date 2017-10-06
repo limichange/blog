@@ -6,17 +6,28 @@ tags: [koa, nodejs]
 
 ## 说明
 
+如果你对说明没兴趣，可以直接看下面一章节。
 
+起因是我看到了一篇招聘说明，上面要求应试者对koa的源码了如指掌。很惭愧，我虽然使用koa有一段时间了，但的确没有仔细的看过koa的源码。于是我就到网上搜索了一些关于koa深入的说明或教程。但很遗憾，大多数的文章较老，停留在`Genetator`的版本，或只是提及了几个关键的核心，并不全面。
+
+所以，为什么不自己写一篇呢？
+
+如果你已经使用koa一段时间了，且对一些API比较熟悉了，现在想更加的精进一些。又或是你是刚用koa的新手，想从中学些比较有用的知识。那么这篇文章很适合你。
+
+接下来我会事无巨细的为你介绍koa的方方面面，对每一个函数和变量进行说明。当然，我没有办法保证所有的说明都是对的，如果你发现了错误，请在最后面留言，我会尽快的修改。
+
+那么，让我们开始吧 ：）
 
 ## 版本
 
-我们看的是2.3.0版本，我Fork了下来以免和文章发生冲突。
+我们看的是2.3.0版本，我Fork了下来以保证和文章同步，因为这篇文章在未来也会过时。
 
 https://github.com/limichange/koa
 
 ## 首先
 
-这个是官方的上手例子，记忆一下。
+这个是官方的上手例子，简单记忆一下。如果你对代码中的`async`和`=>`感到困惑，那么你需要先去学习一下[最新的js语法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)。
+
 ```js
 const Koa = require('koa');
 const app = new Koa();
@@ -30,18 +41,18 @@ app.listen(3000);
 
 ## 找入口
 
-首先要找到入口的文件，我们可以在koa包的package.json里找到。
+首先要找到入口的文件，我们可以在koa包的[package.json](https://github.com/limichange/koa/blob/master/package.json#L5)里找到。
 
 ```json
 {
   "main": "lib/application.js"
 }
 ```
-好了，找到入口的文件，接着往下看。
+好了，我们找到入口的文件了，接着往下看。
 
 ## 细看
 
-首先大致的看一下文件，然后我们先把文件简化一下。
+让我们把目光转到[lib/application.js](https://github.com/limichange/koa/blob/master/lib/application.js)。首先大致的看一下文件，然后我们先把文件简化一下。
 
 ```js
 // 引入其他的模块
@@ -93,7 +104,7 @@ module.exports = class Application extends Emitter {
  - `proxy` 如果使用代理模式的话，就设为`true`
  - `subdomainOffset` offset of .subdomains to ignore [2]
 
-另外`middleware`从名字可以看出来，是用来存储中间件的。如何使用我们会在后面详细的分析下。
+另外`middleware`从名字可以看出来，是用来存储中间件的。至于是如何运作的，我们会在后面详细的分析下。
 
 
 > TODO

@@ -50,7 +50,7 @@ app.listen(3000);
 ```
 好了，我们找到入口的文件了，接着往下看。
 
-## 细看
+## 构造函数
 
 让我们把目光转到[lib/application.js](https://github.com/limichange/koa/blob/master/lib/application.js)。首先大致的看一下文件，然后我们先把文件简化一下。
 
@@ -106,19 +106,40 @@ module.exports = class Application extends Emitter {
 
 另外`middleware`从名字可以看出来，是用来存储中间件的。至于是如何运作的，我们会在后面详细的分析下。
 
-让我们看最后三个变量，通过一个例子就能让你立马明白他们是做什么的。是不是感觉很亲切？
+让我们看最后三个变量，这是为了向外部暴露一些内部的原型对象。使用[`Object.create`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)可以将原型复制一份。一开始我也对这三个变量感到困惑，为什么要这么做？于是我翻了一下koa的commit历史，找到了一次[提交](https://github.com/limichange/koa/commit/0be144211189c0ebd2ca059d7f1ee2e72b2ac6b9)。
+
+> expose app-specific prototypes, cleanup/fix tests
+
+很好，我们现在把最初的构建流程弄清楚了。
+
+## app.use
+
+现在我们看看这一部分，`use`函数。我们通过他塞入中间件。
+
 ```js
 app.use(async ctx => {
-  ctx;          // context
-  ctx.request;  // request
-  ctx.response; // response
+  ctx.body = 'Hello World';
 });
 ```
 
-好了，我们把构造函数里的发生了什么都搞清了。
-等一下，[`Object.create`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)是什么？为什么不是`new`？
+轻松找到[定义的地方](https://github.com/limichange/koa/blob/master/lib/application.js#L94-L115)。
 
-看，我们就要学到新东西了。其实当我第一次看的时候，我也感到了困惑。所以我觉得有必要在此详细的说明一下。
+```js
+use(fn) {
+  if (typeof fn !== 'function') throw new TypeError('middleware must be a function!');
+  if (isGeneratorFunction(fn)) {
+    deprecate('Support for generators will be removed in v3. ' +
+              'See the documentation for examples of how to convert old middleware ' +
+              'https://github.com/koajs/koa/blob/master/docs/migration.md');
+    fn = convert(fn);
+  }
+  debug('use %s', fn._name || fn.name || '-');
+  this.middleware.push(fn);
+  return this;
+}
+```
+
+首先他检查了fn是不是一个函数，中间件都是通过函数的方式传入的。然后看看你传入的是不是v1版本的中间件，警告你一下，并贴心的帮你转换到v2。
 
 
 > TODO

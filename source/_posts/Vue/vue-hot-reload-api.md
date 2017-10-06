@@ -1,4 +1,10 @@
-# vue-hot-reload-api
+---
+title: vue-hot-reload-api
+date: 2016-10-06 13:13:42
+tags: [vue]
+---
+
+这是我给官方翻译了一个中文版
 
 > 注意: `vue-hot-reload-api@2.x` 仅支持 `vue@2.x`
 

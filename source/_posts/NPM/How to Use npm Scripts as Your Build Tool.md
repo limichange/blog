@@ -1,3 +1,14 @@
+---
+title: Run npm scripts in series
+date: 2016-11-13 10:48:11
+tags: [npm]
+---
+
+## 介绍
+这是我看的一个网络课程，
+介绍了很多的npm中scripts的用法，
+顺便就做了这些笔记。
+
 ## Class
 From https://egghead.io/lessons/tools-run-npm-scripts-in-series
 

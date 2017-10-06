@@ -1,3 +1,9 @@
+---
+title: Mac启动Mysql的时候产生报错
+date: 2017-04-30 10:48:11
+tags: [mac, mysql]
+---
+
 这是一个在Mac启动Mysql的时候产生的一个报错。
 
 ## 1

@@ -41,7 +41,7 @@ app.listen(3000);
 
 ## 找入口
 
-首先要找到入口的文件，我们可以在koa包的[package.json](https://github.com/limichange/koa/blob/master/package.json#L5)里找到。
+首先要找到入口的文件，不然我们就不知道从何看起了。我们可以在koa包的[package.json](https://github.com/limichange/koa/blob/master/package.json#L5)里找到。
 
 ```json
 {
@@ -105,6 +105,20 @@ module.exports = class Application extends Emitter {
  - `subdomainOffset` offset of .subdomains to ignore [2]
 
 另外`middleware`从名字可以看出来，是用来存储中间件的。至于是如何运作的，我们会在后面详细的分析下。
+
+让我们看最后三个变量，通过一个例子就能让你立马明白他们是做什么的。是不是感觉很亲切？
+```js
+app.use(async ctx => {
+  ctx;          // context
+  ctx.request;  // request
+  ctx.response; // response
+});
+```
+
+好了，我们把构造函数里的发生了什么都搞清了。
+等一下，[`Object.create`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)是什么？为什么不是`new`？
+
+看，我们就要学到新东西了。其实当我第一次看的时候，我也感到了困惑。所以我觉得有必要在此详细的说明一下。
 
 
 > TODO

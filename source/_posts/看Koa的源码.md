@@ -4,6 +4,10 @@ date: 2017-10-06 16:09:19
 tags: [koa, nodejs]
 ---
 
+## 说明
+
+
+
 ## 版本
 
 我们看的是2.3.0版本，我Fork了下来以免和文章发生冲突。
@@ -88,5 +92,8 @@ module.exports = class Application extends Emitter {
  - `env` 是运行时的环境变量，默认是`development`
  - `proxy` 如果使用代理模式的话，就设为`true`
  - `subdomainOffset` offset of .subdomains to ignore [2]
+
+另外`middleware`从名字可以看出来，是用来存储中间件的。如何使用我们会在后面详细的分析下。
+
 
 > TODO

@@ -1,3 +1,9 @@
+---
+title: 设置mac的host文件
+date: 2016-05-10 10:48:11
+tags: [mac, mysql]
+---
+
 ## 步骤
 目标是`/private/etc/hosts`文件，
 打开即可。

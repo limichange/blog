@@ -10,7 +10,7 @@ tags: [koa, nodejs]
 
 https://github.com/limichange/koa
 
-## 首先看看
+## 首先
 
 这个是官方的上手例子，记忆一下。
 ```js
@@ -24,7 +24,7 @@ app.use(async ctx => {
 app.listen(3000);
 ```
 
-## 如何看
+## 找入口
 
 首先要找到入口的文件，我们可以在koa包的package.json里找到。
 
@@ -35,15 +35,13 @@ app.listen(3000);
 ```
 好了，找到入口的文件，接着往下看。
 
-### 细看
+## 细看
 
-#### lib/application.js
-
-我们先把文件简化一下，这样看。
+首先大致的看一下文件，然后我们先把文件简化一下。
 
 ```js
-
 // 引入其他的模块
+const Emitter = require('events');
 
 // Koa的Class定义
 module.exports = class Application extends Emitter {
@@ -54,9 +52,41 @@ module.exports = class Application extends Emitter {
 function respond(ctx) {
   // 具体的内容
 }
-
 ```
 
-这样看起来就很清晰。
+这样看起来就很清晰了。
+
+[events](https://nodejs.org/dist/latest-v8.x/docs/api/events.html)是nodejs的内置基本库。如果不是很熟悉，可以去看看官方的文档。
+
+接着看这个Class的构造函数。让我们稍微还原一下文件，填上我们要看的内容。
+
+```js
+// 引入其他的模块
+const response = require('./response');
+const context = require('./context');
+const request = require('./request');
+const Emitter = require('events');
+
+// Koa的Class定义
+module.exports = class Application extends Emitter {
+  constructor() {
+    super();
+
+    this.proxy = false;
+    this.middleware = [];
+    this.subdomainOffset = 2;
+    this.env = process.env.NODE_ENV || 'development';
+    this.context = Object.create(context);
+    this.request = Object.create(request);
+    this.response = Object.create(response);
+  }
+  // 其他的内容
+};
+```
+
+看样子是初始化了一些内部的变量，我们挨个看看。其中的三个我们可以从文档中找到解释。
+ - `env` 是运行时的环境变量，默认是`development`
+ - `proxy` 如果使用代理模式的话，就设为`true`
+ - `subdomainOffset` offset of .subdomains to ignore [2]
 
 > TODO

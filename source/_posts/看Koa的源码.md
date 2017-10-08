@@ -139,7 +139,49 @@ use(fn) {
 }
 ```
 
-首先他检查了fn是不是一个函数，中间件都是通过函数的方式传入的。然后看看你传入的是不是v1版本的中间件，警告你一下，并贴心的帮你转换到v2。
+首先他检查了fn是不是一个Generator函数，中间件都是通过函数的方式传入的。然后看看你传入的是不是v1版本的中间件，警告你一下，并贴心的帮你转换到v2。未来转化的这部分会废弃掉，就不详细讲了，用到的[koa-convert](https://github.com/koajs/convert#readme)和[is-generator-function](https://github.com/ljharb/is-generator-function#readme)可以自己详细看。
 
+[debug](https://github.com/visionmedia/debug#readme)是很常用的调试库，功能很多，没有用过或不熟悉的一定要要看。
+
+`middleware`就是我们前面看到的那个变量，和我们想的一样，中间件都被存到这个数组里面了。
+
+最后返回this，因此可以做链式的调用。像这样。
+
+```js
+app
+  .use(...)
+  .use(...)
+```
+
+看样子这个函数，只是把中间件存了起来，并没有做什么特别的事情。
+
+## app.listen
+
+最后一个部分就是`app.listen`了。
+
+```js
+app.listen(3000)
+```
+
+这个函数就定义在[Application的构造函数的下面](https://github.com/limichange/koa/blob/master/lib/application.js#L65-L73)。
+
+```js
+/**
+  * Shorthand for:
+  *
+  *    http.createServer(app.callback()).listen(...)
+  *
+  * @param {Mixed} ...
+  * @return {Server}
+  * @api public
+  */
+listen(...args) {
+  debug('listen');
+  const server = http.createServer(this.callback());
+  return server.listen(...args);
+}
+```
+
+是个快捷方式，把监听的流程简化了一下。这里就是用[`http.createServer`](https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_http_createserver_requestlistener)创建了一个http的服务，把参数直接的传入到`server.listen`。我们需要关注的是`this.callback()`。
 
 > TODO

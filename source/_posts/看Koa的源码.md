@@ -184,4 +184,35 @@ listen(...args) {
 
 是个快捷方式，把监听的流程简化了一下。这里就是用[`http.createServer`](https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_http_createserver_requestlistener)创建了一个http的服务，把参数直接的传入到`server.listen`。我们需要关注的是`this.callback()`。
 
+先大致的看一下[callback的实现](https://github.com/limichange/koa/blob/master/lib/application.js#L117-L140)。这里是整个koa的核心，是处理请求的地方。
+
+```js
+/**
+  * Return a request handler callback
+  * for node's native http server.
+  *
+  * @return {Function}
+  * @api public
+  */
+
+callback() {
+  const fn = compose(this.middleware);
+
+  if (!this.listeners('error').length) this.on('error', this.onerror);
+
+  const handleRequest = (req, res) => {
+    res.statusCode = 404;
+    const ctx = this.createContext(req, res);
+    const onerror = err => ctx.onerror(err);
+    const handleResponse = () => respond(ctx);
+    onFinished(res, onerror);
+    return fn(ctx).then(handleResponse).catch(onerror);
+  };
+
+  return handleRequest;
+}
+```
+
+通过注释知道，这个函数是返回一个请求处理回调给nodejs的http使用，就前面listen里的用法。
+
 > TODO

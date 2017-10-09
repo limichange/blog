@@ -244,6 +244,101 @@ callback() {
 
 > TODO
 
+### createContext
+
+```js
+createContext(req, res) {
+  // 还记得开头看到的那个构造函数吗？里面最后的三行。这里就直接的使用了那三个对象。
+  const context = Object.create(this.context);
+  const request = context.request = Object.create(this.request);
+  const response = context.response = Object.create(this.response);
+
+  // 接下来就是各种赋值，把原生`req`和`res`存起来，给对象做别名。
+  context.app = request.app = response.app = this;
+  context.req = request.req = response.req = req;
+  context.res = request.res = response.res = res;
+  request.ctx = response.ctx = context;
+  request.response = response;
+  response.request = request;
+  context.originalUrl = request.originalUrl = req.url;
+
+  // 创建`cookies`，平时你的`keys`就是给这里用的。
+  context.cookies = new Cookies(req, res, {
+    keys: this.keys,
+    secure: request.secure
+  });
+
+  // 然后就是ip的判断。
+  request.ip = request.ips[0] || req.socket.remoteAddress || '';
+
+  // 调用accepts
+  context.accept = request.accept = accepts(req);
+
+  // 初始化state
+  context.state = {};
+
+  // 处理完毕后把ctx返回
+  return context;
+}
+```
+
+这里面用到了两个库[`cookies`](https://github.com/pillarjs/cookies#readme)和[accepts](https://github.com/jshttp/accepts#readme)。前者就是用来操作`cookie`的，后者是处理`Negotiation`。
+
+> TODO
+
+### respond
+
+```js
+function respond(ctx) {
+  // allow bypassing koa
+  if (false === ctx.respond) return;
+
+  const res = ctx.res;
+  if (!ctx.writable) return;
+
+  let body = ctx.body;
+  const code = ctx.status;
+
+  // ignore body
+  if (statuses.empty[code]) {
+    // strip headers
+    ctx.body = null;
+    return res.end();
+  }
+
+  if ('HEAD' == ctx.method) {
+    if (!res.headersSent && isJSON(body)) {
+      ctx.length = Buffer.byteLength(JSON.stringify(body));
+    }
+    return res.end();
+  }
+
+  // status body
+  if (null == body) {
+    body = ctx.message || String(code);
+    if (!res.headersSent) {
+      ctx.type = 'text';
+      ctx.length = Buffer.byteLength(body);
+    }
+    return res.end(body);
+  }
+
+  // responses
+  if (Buffer.isBuffer(body)) return res.end(body);
+  if ('string' == typeof body) return res.end(body);
+  if (body instanceof Stream) return body.pipe(res);
+
+  // body: json
+  body = JSON.stringify(body);
+  if (!res.headersSent) {
+    ctx.length = Buffer.byteLength(body);
+  }
+  res.end(body);
+}
+```
+
+> TODO
+
 ### koa-compose
 
 首先`compose`把中间件处理了一下，看看他是如何实现的。

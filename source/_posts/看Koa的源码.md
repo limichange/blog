@@ -110,6 +110,19 @@ module.exports = class Application extends Emitter {
 
 > expose app-specific prototypes, cleanup/fix tests
 
+当然官方文档里也说了。
+> app.context is the prototype from which ctx is created from. You may add additional properties to ctx by editing app.context. This is useful for adding properties or methods to ctx to be used across your entire app, which may be more performant (no middleware) and/or easier (fewer require()s) at the expense of relying more on ctx, which could be considered an anti-pattern.
+
+简单的说就是可以通过他添加一个全局的属性或者方法，这样比添加中间件方便而且性能更好。如下。
+
+```js
+app.context.db = db();
+
+app.use(async ctx => {
+  console.log(ctx.db);
+});
+```
+
 很好，我们现在把最初的构建流程弄清楚了。
 
 ## app.use
@@ -184,7 +197,7 @@ listen(...args) {
 
 是个快捷方式，把监听的流程简化了一下。这里就是用[`http.createServer`](https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_http_createserver_requestlistener)创建了一个http的服务，把参数直接的传入到`server.listen`。我们需要关注的是`this.callback()`。
 
-先大致的看一下[callback的实现](https://github.com/limichange/koa/blob/master/lib/application.js#L117-L140)。这里是整个koa的核心，是处理请求的地方。
+先大致的看一下[callback的实现](https://github.com/limichange/koa/blob/master/lib/application.js#L117-L140)。这里是整个koa的核心，是处理请求的地方。通过注释知道，这个函数是返回一个请求处理回调给nodejs的http使用，就前面listen里的用法。首先我们大致的理清里面的流程。
 
 ```js
 /**
@@ -196,23 +209,76 @@ listen(...args) {
   */
 
 callback() {
+  // 把中间件处理成一个函数
   const fn = compose(this.middleware);
 
+  // 绑定默认的错误处理
   if (!this.listeners('error').length) this.on('error', this.onerror);
 
+  // 首先是原生的`req`和`res`传进来
   const handleRequest = (req, res) => {
+
+    // 默认状态码是404
     res.statusCode = 404;
+
+    // 然后创建ctx
     const ctx = this.createContext(req, res);
+
+    // 创建错误处理的函数
     const onerror = err => ctx.onerror(err);
+
+    // 响应处理
     const handleResponse = () => respond(ctx);
+
+    // 调用on-finished库处理
     onFinished(res, onerror);
+
+    // 用中间件处理ctx，然后处理响应，最后捕捉错误
     return fn(ctx).then(handleResponse).catch(onerror);
   };
 
+  // 返回处理函数
   return handleRequest;
 }
 ```
 
-通过注释知道，这个函数是返回一个请求处理回调给nodejs的http使用，就前面listen里的用法。
+> TODO
+
+### koa-compose
+
+首先`compose`把中间件处理了一下，看看他是如何实现的。
+```js
+const compose = require('koa-compose');
+```
+
+是一个独立的库。这里说一下，我们可以在命令行通过一个命令快速的找到一个库的实现。
+```shell
+$ npm home koa-compose
+```
+
+是不是很方便？我们把[定义的文件](https://github.com/koajs/compose/blob/master/index.js)打开看看。为了方便讲解，我把其中的注释和部分类型判断删掉了。
+
+```js
+function compose (middleware) {
+  return function (context, next) {
+    let index = -1
+    return dispatch(0)
+    function dispatch (i) {
+      if (i <= index) return Promise.reject(new Error('next() called multiple times'))
+      index = i
+      let fn = middleware[i]
+      if (i === middleware.length) fn = next
+      if (!fn) return Promise.resolve()
+      try {
+        return Promise.resolve(fn(context, function next () {
+          return dispatch(i + 1)
+        }))
+      } catch (err) {
+        return Promise.reject(err)
+      }
+    }
+  }
+}
+```
 
 > TODO

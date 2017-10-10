@@ -288,28 +288,50 @@ createContext(req, res) {
 
 ### respond
 
+koa在这里引入了[`statuses`](https://github.com/jshttp/statuses#statuses)
+
+> HTTP status utility for node.
+
+`statuses`提供了很多http状态的管理方法，平时处理http的时候会用得着。这里koa用来判断该请求是否需要把body清空，[比如这样](https://github.com/jshttp/statuses#statusemptycode)。
+```js
+status.empty[200] // => undefined
+status.empty[204] // => true
+status.empty[304] // => true
+```
+
+接下来看本体。
 ```js
 function respond(ctx) {
-  // allow bypassing koa
+  // 没有respond的话就不处理
   if (false === ctx.respond) return;
 
+  // 把原生的res取出来
   const res = ctx.res;
+
+  //
   if (!ctx.writable) return;
 
+  // 把body和状态码取出来
   let body = ctx.body;
   const code = ctx.status;
 
-  // ignore body
+  // 判断该状态是否需要一个空的body
   if (statuses.empty[code]) {
-    // strip headers
+
+    // 把body清空
     ctx.body = null;
+
+    // 返回
     return res.end();
   }
 
+  // 如果http的方法是 `HEAD`
   if ('HEAD' == ctx.method) {
     if (!res.headersSent && isJSON(body)) {
       ctx.length = Buffer.byteLength(JSON.stringify(body));
     }
+
+    // 返回
     return res.end();
   }
 
@@ -320,6 +342,8 @@ function respond(ctx) {
       ctx.type = 'text';
       ctx.length = Buffer.byteLength(body);
     }
+
+    // 返回
     return res.end(body);
   }
 
@@ -333,6 +357,8 @@ function respond(ctx) {
   if (!res.headersSent) {
     ctx.length = Buffer.byteLength(body);
   }
+
+  // 返回
   res.end(body);
 }
 ```

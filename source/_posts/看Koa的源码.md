@@ -423,7 +423,7 @@ function compose (middleware) {
       // 把中间件赋值为fn，这里可以知道，中间件的调用顺序取决于之前用use的顺序
       let fn = middleware[i]
 
-      // 
+      // 最后一次的时候，把next当成fn来处理
       if (i === middleware.length) fn = next
 
       // fn没有了的话，就是处理完毕了
@@ -440,5 +440,7 @@ function compose (middleware) {
   }
 }
 ```
+
+稀里糊涂的感觉？那就来看看[compose的单元测试](https://github.com/koajs/compose/blob/master/test/test.js)。
 
 > TODO

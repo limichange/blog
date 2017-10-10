@@ -1,3 +1,9 @@
+---
+title: now.sh
+date: 2016-12-16 13:13:42
+tags: [shell, deploy]
+---
+
 # 场景
 
 https://zeit.co/now

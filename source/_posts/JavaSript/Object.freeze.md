@@ -1,3 +1,9 @@
+---
+title: Object.freeze
+date: 2016-06-06 13:13:42
+tags: [js, object]
+---
+
 今天照常逛逛Github,
 发现vuex-router-sync更新了。
 https://github.com/vuejs/vuex-router-sync
@@ -24,7 +30,7 @@ https://segmentfault.com/a/1190000003894119
 Object.freeze(obj);
 
 obj.key = `value`; // no way!
-``
+```
 
 在严格模式下会报类型错误（TypeError），
 然后就是对象里面的对象不受影响（浅冻结），

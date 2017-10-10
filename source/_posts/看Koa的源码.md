@@ -14,7 +14,7 @@ tags: [koa, nodejs]
 
 如果你已经使用koa一段时间了，且对一些API比较熟悉了，现在想更加的精进一些。又或是你是刚用koa的新手，想从中学些比较有用的知识。那么这篇文章很适合你。
 
-接下来我会事无巨细的为你介绍koa的方方面面，对每一个函数和变量进行说明。当然，我没有办法保证所有的说明都是对的，如果你发现了错误，请在最后面留言，我会尽快的修改。
+接下来我会事无巨细的为你介绍koa的方方面面，尽量对每一个函数和变量进行说明。当然，我没有办法保证所有的说明都是对的，如果你发现了错误，请在最后面留言，我会尽快的修改。
 
 那么，让我们开始吧 ：）
 
@@ -26,7 +26,7 @@ https://github.com/limichange/koa
 
 ## 首先
 
-这个是官方的上手例子，简单记忆一下。如果你对代码中的`async`和`=>`感到困惑，那么你需要先去学习一下[最新的js语法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)。
+这个是官方的上手例子，简单记忆一下。如果你对代码中的`async`和`=>`感到困惑，那么你需要先去学习一下[最新的js语法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)。因为我们看的目前是最新版的koa，所以你可以忽略generator的知识，当然学一下也没有什么关系：）
 
 ```js
 const Koa = require('koa');
@@ -38,6 +38,8 @@ app.use(async ctx => {
 
 app.listen(3000);
 ```
+
+我们接下来的内容将会从这个例子展开。
 
 ## 找入口
 
@@ -122,7 +124,7 @@ app.use(async ctx => {
   console.log(ctx.db);
 });
 ```
-
+我们暂且不要管三个变量的里面的具体实现，后面会慢慢讲。
 很好，我们现在把最初的构建流程弄清楚了。
 
 ## app.use
@@ -308,7 +310,7 @@ function respond(ctx) {
   // 把原生的res取出来
   const res = ctx.res;
 
-  //
+  // 是否可写
   if (!ctx.writable) return;
 
   // 把body和状态码取出来
@@ -335,8 +337,10 @@ function respond(ctx) {
     return res.end();
   }
 
-  // status body
+  // body为空
   if (null == body) {
+
+    // 把message或者状态码放进去
     body = ctx.message || String(code);
     if (!res.headersSent) {
       ctx.type = 'text';
@@ -352,7 +356,7 @@ function respond(ctx) {
   if ('string' == typeof body) return res.end(body);
   if (body instanceof Stream) return body.pipe(res);
 
-  // body: json
+  // 如果所有的判断都通过了，就当json来处理
   body = JSON.stringify(body);
   if (!res.headersSent) {
     ctx.length = Buffer.byteLength(body);
@@ -362,6 +366,15 @@ function respond(ctx) {
   res.end(body);
 }
 ```
+
+这里是[`res.end`的解释](https://nodejs.org/api/http.html#http_response_end_data_encoding_callback)
+> This method signals to the server that all of the response headers and body have been sent
+
+`headersSent`和
+
+#### writable
+
+`writable`是一个很有趣的变量，我们先找到[定义的地方](https://github.com/koajs/koa/blob/13c7ca61392acecff026a079623ab0d928ea0d93/lib/response.js#L487-L505)。然后再看一看他的[单元测试](https://github.com/koajs/koa/blob/d394724200d0e36e6af6db2edb524820212da915/test/response/writable.js)。
 
 > TODO
 
@@ -379,12 +392,25 @@ $ npm home koa-compose
 
 是不是很方便？我们把[定义的文件](https://github.com/koajs/compose/blob/master/index.js)打开看看。为了方便讲解，我把其中的注释和部分类型判断删掉了。
 
+确保你对`Promise`已经很熟悉了，不然你会对接下里的讲解很困惑。
+
+为了更好的理解下面的运行原理，先让我们复习一下koa的中间件运行顺序，只要弄明白下图是怎么回事就可以了。
+![middleware.gif](https://github.com/koajs/koa/blob/master/docs/middleware.gif)
+
+很好，那我们开始。
+
 ```js
 function compose (middleware) {
+
+  // 首先会返回一个函数，就是createContext里的fn
   return function (context, next) {
     let index = -1
     return dispatch(0)
+
+    // 
     function dispatch (i) {
+
+      // 你不可以再一次请求里多次调用next
       if (i <= index) return Promise.reject(new Error('next() called multiple times'))
       index = i
       let fn = middleware[i]
@@ -401,5 +427,7 @@ function compose (middleware) {
   }
 }
 ```
+
+
 
 > TODO

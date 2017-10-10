@@ -8,7 +8,7 @@ tags: [koa, nodejs]
 
 如果你对说明没兴趣，可以直接看下面一章节。
 
-起因是我看到了一篇招聘说明，上面要求应试者对koa的源码了如指掌。很惭愧，我虽然使用koa有一段时间了，但的确没有仔细的看过koa的源码。于是我就到网上搜索了一些关于koa深入的说明或教程。但很遗憾，大多数的文章较老，停留在`Genetator`的版本，或只是提及了几个关键的核心，并不全面。
+起因是我看到了一篇招聘说明，上面要求应试者对koa的源码了如指掌。很惭愧，我虽然使用koa有一段时间了，但的确没有仔细的看过koa的源码。于是我就到网上搜索了一些关于koa深入的说明或教程。但很遗憾，大多数的文章较老，停留在`Genetator`的版本，或只是提及了几个关键的核心，并不全面，或是写得较为凌乱。
 
 所以，为什么不自己写一篇呢？
 
@@ -21,7 +21,6 @@ tags: [koa, nodejs]
 ## 版本
 
 我们看的是2.3.0版本，我Fork了下来以保证和文章同步，因为这篇文章在未来也会过时。
-
 https://github.com/limichange/koa
 
 ## 首先
@@ -398,25 +397,39 @@ $ npm home koa-compose
 ![middleware.gif](https://github.com/koajs/koa/blob/master/docs/middleware.gif)
 
 很好，那我们开始。
+噢，对，记得把它想象成洋葱。
 
 ```js
 function compose (middleware) {
 
   // 首先会返回一个函数，就是createContext里的fn
   return function (context, next) {
+
+    // 标识
     let index = -1
+
+    // 调用第一个中间件，然后开始循环调用
     return dispatch(0)
 
-    // 
+    // 调用中间件
     function dispatch (i) {
 
       // 你不可以再一次请求里多次调用next
       if (i <= index) return Promise.reject(new Error('next() called multiple times'))
+
+      // 记录这是第几个中间件
       index = i
+
+      // 把中间件赋值为fn，这里可以知道，中间件的调用顺序取决于之前用use的顺序
       let fn = middleware[i]
+
+      // 
       if (i === middleware.length) fn = next
+
+      // fn没有了的话，就是处理完毕了
       if (!fn) return Promise.resolve()
       try {
+        // 循环调用，把标志加一，这样就会调用下一个中间件了
         return Promise.resolve(fn(context, function next () {
           return dispatch(i + 1)
         }))
@@ -427,7 +440,5 @@ function compose (middleware) {
   }
 }
 ```
-
-
 
 > TODO

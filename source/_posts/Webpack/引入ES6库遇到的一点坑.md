@@ -1,3 +1,9 @@
+---
+title: My Animation List
+date: 2016-01-12 19:42:02
+tags: [tool, webpack]
+---
+
 ## 场景
 
 我自己写了一个npm的包，

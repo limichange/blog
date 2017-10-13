@@ -1,3 +1,9 @@
+---
+title: find 和 filter
+date: 2016-12-12 19:42:02
+tags: [js, array]
+---
+
 ## 场景
 
 从数组中根据条件过滤结果。

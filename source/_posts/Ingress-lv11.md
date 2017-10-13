@@ -8,8 +8,8 @@ tags: [ingress]
 
 可以申请po了 🌝
 
-![ingress-lv11](WechatIMG128.jpeg)
-![ingress-lv11](WechatIMG129.jpeg)
-![ingress-lv11](WechatIMG130.jpeg)
+![ingress-lv11](/images/WechatIMG128.jpeg)
+![ingress-lv11](/images/WechatIMG129.jpeg)
+![ingress-lv11](/images/WechatIMG130.jpeg)
 
 > 估计lv12得到明年

@@ -1,3 +1,9 @@
+---
+title: Cordova - 2 - 调试器
+date: 2016-09-27 18:37:21
+tags: [cordova]
+---
+
 因为Cordova是从PhoneGap分离出来的，
 所以PhoneGap的调试器能够直接的使用。
 

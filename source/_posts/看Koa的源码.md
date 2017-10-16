@@ -373,9 +373,11 @@ function respond(ctx) {
 
 #### writable
 
-`writable`是一个很有趣的变量，我们先找到[定义的地方](https://github.com/koajs/koa/blob/13c7ca61392acecff026a079623ab0d928ea0d93/lib/response.js#L487-L505)。然后再看一看他的[单元测试](https://github.com/koajs/koa/blob/d394724200d0e36e6af6db2edb524820212da915/test/response/writable.js)。
+`writable`是一个很有趣的变量，我们先找到[定义的地方](https://github.com/koajs/koa/blob/13c7ca61392acecff026a079623ab0d928ea0d93/lib/response.js#L487-L505)。
 
-> TODO
+> can't write any more after response finished
+
+防止在响应之后的再写入。
 
 ### koa-compose
 
@@ -442,8 +444,12 @@ function compose (middleware) {
 }
 ```
 
-稀里糊涂的感觉？那就来看看[compose的单元测试](https://github.com/koajs/compose/blob/master/test/test.js)。
+稀里糊涂的感觉？那就来看看[compose的单元测试](https://github.com/koajs/compose/blob/master/test/test.js)。一般对函数的定义理解不过来的时候，去翻一下注释是个很好的主意，测试里定义了函数的所有行为。
 
-> TODO
+现在你可以感觉到，这个过程就是就是把一堆中间件给压缩成一个函数，用来处理网络请求。也就顺便弄清了中间件的整个处理过程。
 
 ## 结束
+
+koa的源码很精简，因为他把所有的额外功能都交给了其他的中间件，比如模板和路由。整个过程中，最有趣的部分莫过于中间件的处理。
+
+感谢你的阅读 ：D

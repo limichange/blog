@@ -1,3 +1,9 @@
+---
+title: sequelize - 2
+date: 2016-03-15 19:42:02
+tags: [sequelize, js]
+---
+
 上次我们把sequelize给初始化好了，
 这次我们配置一下，
 跑一跑。

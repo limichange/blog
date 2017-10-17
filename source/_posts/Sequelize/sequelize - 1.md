@@ -1,3 +1,9 @@
+---
+title: sequelize - 1
+date: 2016-03-12 19:42:02
+tags: [sequelize, js]
+---
+
 sequelize是nodejs的一个ORM，
 就是连接数据库的，
 因为之前用过，

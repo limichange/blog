@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Limichange Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://limichange.uedtoutiao.com/"/>
+  <updated>2017-10-16T12:56:12.000Z</updated>
+  <id>http://limichange.uedtoutiao.com/</id>
+  
+  <author>
+    <name>Limichange</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用postWindow在网页直接通信</title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/16/postWindow/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/16/postWindow/</id>
+    <published>2017-10-16T02:21:50.000Z</published>
+    <updated>2017-10-16T12:56:12.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://limichange.uedtoutiao.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ingress lv11</title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/13/Ingress-lv11/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/13/Ingress-lv11/</id>
+    <published>2017-10-13T02:43:39.000Z</published>
+    <updated>2017-10-13T22:10:57.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;升级到11了&quot;&gt;&lt;a href=&quot;#升级到11了&quot; class=&quot;headerlink&quot; title=&quot;升级到11了&quot;&gt;&lt;/a&gt;升级到11了&lt;/h2&gt;&lt;p&gt;可以申请po了 🌝&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="ingress" scheme="http://limichange.uedtoutiao.com/tags/ingress/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My Animation List</title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/12/my-animation-list/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/12/my-animation-list/</id>
+    <published>2017-10-12T11:42:02.000Z</published>
+    <updated>2017-10-12T11:45:50.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天写个了一个工具，欢迎star 😆&lt;br&gt;&lt;a href=&quot;https://limichange.github.io/my-animation-list/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="css" scheme="http://limichange.uedtoutiao.com/tags/css/"/>
+    
+      <category term="tool" scheme="http://limichange.uedtoutiao.com/tags/tool/"/>
+    
+      <category term="webpack" scheme="http://limichange.uedtoutiao.com/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>十月新番推荐 - 少女终末旅行</title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/10/%E5%8D%81%E6%9C%88%E6%96%B0%E7%95%AA%E6%8E%A8%E8%8D%90/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/10/十月新番推荐/</id>
+    <published>2017-10-10T13:41:10.000Z</published>
+    <updated>2017-10-10T14:04:58.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;/images/1431ca5bb2f7143062e3df8f21b8448cf8cccc13.jpg&quot; alt=&quot;盗图&quot;&gt;&lt;/p&gt;
+&lt;p&gt;十月新番上架啦！本次推荐一个较为冷门的新番！少女终末旅行！&lt;/p&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="anime" scheme="http://limichange.uedtoutiao.com/tags/anime/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>看Koa的源码</title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/06/%E7%9C%8BKoa%E7%9A%84%E6%BA%90%E7%A0%81/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/06/看Koa的源码/</id>
+    <published>2017-10-06T08:09:19.000Z</published>
+    <updated>2017-10-16T12:56:12.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;说明&quot;&gt;&lt;a href=&quot;#说明&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nodejs" scheme="http://limichange.uedtoutiao.com/tags/nodejs/"/>
+    
+      <category term="koa" scheme="http://limichange.uedtoutiao.com/tags/koa/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>axios发送formData</title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/06/axios%E5%8F%91%E9%80%81formData/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/06/axios发送formData/</id>
+    <published>2017-10-06T05:13:42.000Z</published>
+    <updated>2017-10-06T05:35:40.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这是一个坑，&lt;br&gt;因为axios无法在nodejs的环境中发送formData。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/axios/axios#request-config&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nodejs" scheme="http://limichange.uedtoutiao.com/tags/nodejs/"/>
+    
+      <category term="axios" scheme="http://limichange.uedtoutiao.com/tags/axios/"/>
+    
+      <category term="formData" scheme="http://limichange.uedtoutiao.com/tags/formData/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>catch async function</title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/05/catch-async-function/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/05/catch-async-function/</id>
+    <published>2017-10-05T10:37:21.000Z</published>
+    <updated>2017-10-05T13:30:35.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;事实上，Promise和async的错误捕捉是可以相互转化的。&lt;br&gt;但看起来蛮奇怪的。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div
+        
+      
+    
+    </summary>
+    
+    
+      <category term="nodejs" scheme="http://limichange.uedtoutiao.com/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>十一放假</title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/%E5%8D%81%E4%B8%80%E6%94%BE%E5%81%87/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/十一放假/</id>
+    <published>2017-10-04T02:48:11.000Z</published>
+    <updated>2017-10-04T02:50:22.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;老家甚是无聊，&lt;br&gt;老太太电瓶车走路中央，&lt;br&gt;坚决不让道，&lt;br&gt;甚是神气。&lt;/p&gt;
+&lt;p&gt;ingress新活动牌子甚是丑。&lt;/p&gt;
+&lt;p&gt;接下来看看源码好了。&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/Rxjs/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Rx.js/Rxjs/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;内容整理自&lt;br&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ei7FsoXKPl0&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Project/SPA%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Project/SPA部署流程/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;##&lt;/p&gt;
+&lt;p&gt;由于SPA的分离性导致Feature无法前后同时上线，这样就会产生一个很严重的问题。&lt;br&gt;就是当一方上线后，另一方还没有准备好。&lt;/p&gt;
+&lt;h2 id=&quot;接口上线&quot;&gt;&lt;a href=&quot;#接口上线&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nuxt/init/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Nuxt/init/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Sequelize/sequelize%20-%202/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Sequelize/sequelize - 2/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;上次我们把sequelize给初始化好了，&lt;br&gt;这次我们配置一下，&lt;br&gt;跑一跑。&lt;/p&gt;
+&lt;p&gt;我们直接选MySQL，&lt;br&gt;毕竟大众数据库，&lt;br&gt;出了什么问题好解决。&lt;/p&gt;
+&lt;p&gt;为了避免老是敲长长的命令，&lt;br&gt;我们先来写一个脚本。&lt;/p&gt;
+&lt;p&gt;先花个10分钟
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Sequelize/sequelize%20-%203/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Sequelize/sequelize - 3/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;先看看大致的目录结构，&lt;br&gt;完成了之后大致就是这个样子的。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Books/README/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Books/README/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;书&quot;&gt;&lt;a href=&quot;#书&quot; class=&quot;headerlink&quot; title=&quot;书&quot;&gt;&lt;/a&gt;书&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;读书很重要，哪怕是漫画&lt;br&gt;——我自己说的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/%E5%9C%A8commit%E5%89%8D%E5%BC%BA%E5%88%B6lint/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/在commit前强制lint/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h2&gt;&lt;p&gt;是不是有人在commit前不lint，&lt;br&gt;导致推送了垃圾代码？&lt;br&gt;那我们就让你不lint就commit不了。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Git/Git%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%9A%84%E4%B8%AD%E6%96%87/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Git/Git命令行中的中文/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;其实之前一直没在意，&lt;br&gt;但现在想了想，&lt;br&gt;不如一了百了。&lt;/p&gt;
+&lt;p&gt;之前是这样的。&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Git/%E6%9B%B4%E6%96%B0Fork%E7%9A%84%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Git/更新Fork的项目/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Github/%E6%8F%90%E9%80%9F/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Github/提速/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/%E4%BD%BF%E7%94%A8mkdirp%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/使用mkdirp创建文件夹/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/JavaSript/async&amp;await/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/JavaSript/async&amp;await/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h2&gt;&lt;p&gt;异步流程优化。&lt;/p&gt;
+&lt;h2 id=&quot;例子&quot;&gt;&lt;a href=&quot;#例子&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

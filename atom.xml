@@ -166,11 +166,11 @@
     </summary>
     
     
-      <category term="nodejs" scheme="http://limichange.uedtoutiao.com/tags/nodejs/"/>
-    
       <category term="axios" scheme="http://limichange.uedtoutiao.com/tags/axios/"/>
     
       <category term="formData" scheme="http://limichange.uedtoutiao.com/tags/formData/"/>
+    
+      <category term="nodejs" scheme="http://limichange.uedtoutiao.com/tags/nodejs/"/>
     
   </entry>
   
@@ -226,8 +226,8 @@
   
   <entry>
     <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/Rxjs/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Rx.js/Rxjs/</id>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/passport-http-bearer/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/passport-http-bearer/</id>
     <published>2017-10-04T02:17:03.000Z</published>
     <updated>2017-10-04T02:17:03.000Z</updated>
     
@@ -237,8 +237,8 @@
       
         
         
-          &lt;blockquote&gt;
-&lt;p&gt;内容整理自&lt;br&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ei7FsoXKPl0&quot; target=&quot;_blank&quot;
+          &lt;p&gt;给博客服务端写token的验证服务,&lt;br&gt;使用了passport作为处理工具,&lt;br&gt;配置了passport-http-bearer做为token的实现,&lt;br&gt;然而出现了坑,&lt;br&gt;摊手。&lt;/p&gt;
+&lt;p&gt;在谷歌上查了几个答案就不行,&lt;br&gt;遂,&lt;br&gt;翻开源码直接看。&lt;
         
       
     
@@ -249,8 +249,8 @@
   
   <entry>
     <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Project/SPA%E9%83%A8%E7%BD%B2%E6%B5%81%E7%A8%8B/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Project/SPA部署流程/</id>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nginx/nginx/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Nginx/nginx/</id>
     <published>2017-10-04T02:17:03.000Z</published>
     <updated>2017-10-04T02:17:03.000Z</updated>
     
@@ -260,9 +260,8 @@
       
         
         
-          &lt;p&gt;##&lt;/p&gt;
-&lt;p&gt;由于SPA的分离性导致Feature无法前后同时上线，这样就会产生一个很严重的问题。&lt;br&gt;就是当一方上线后，另一方还没有准备好。&lt;/p&gt;
-&lt;h2 id=&quot;接口上线&quot;&gt;&lt;a href=&quot;#接口上线&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;开头&quot;&gt;&lt;a href=&quot;#开头&quot; class=&quot;headerlink&quot; title=&quot;开头&quot;&gt;&lt;/a&gt;开头&lt;/h2&gt;&lt;p&gt;Nginx入门可以看看这篇，&lt;br&gt;主要是学一些基本的用法。&lt;/p&gt;
+&lt;h2 id=&quot;安装运行&quot;&gt;&lt;a href=&quot;#安装运行&quot;
         
       
     
@@ -273,8 +272,8 @@
   
   <entry>
     <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nuxt/init/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Nuxt/init/</id>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/%E4%BD%BF%E7%94%A8bcryptjs%E5%8A%A0%E5%AF%86/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/使用bcryptjs加密/</id>
     <published>2017-10-04T02:17:03.000Z</published>
     <updated>2017-10-04T02:17:03.000Z</updated>
     
@@ -284,54 +283,9 @@
       
         
         
-          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Sequelize/sequelize%20-%202/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Sequelize/sequelize - 2/</id>
-    <published>2017-10-04T02:17:03.000Z</published>
-    <updated>2017-10-04T02:17:03.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;上次我们把sequelize给初始化好了，&lt;br&gt;这次我们配置一下，&lt;br&gt;跑一跑。&lt;/p&gt;
-&lt;p&gt;我们直接选MySQL，&lt;br&gt;毕竟大众数据库，&lt;br&gt;出了什么问题好解决。&lt;/p&gt;
-&lt;p&gt;为了避免老是敲长长的命令，&lt;br&gt;我们先来写一个脚本。&lt;/p&gt;
-&lt;p&gt;先花个10分钟
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Sequelize/sequelize%20-%203/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Sequelize/sequelize - 3/</id>
-    <published>2017-10-04T02:17:03.000Z</published>
-    <updated>2017-10-04T02:17:03.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;先看看大致的目录结构，&lt;br&gt;完成了之后大致就是这个样子的。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div
+          &lt;p&gt;自己做实验用到了&lt;code&gt;bcryptjs&lt;/code&gt; ，&lt;br&gt;遂，&lt;br&gt;记一下。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.npmjs.com/package/bcryptjs&quot; target=&quot;_blank&quot;
         
       
     
@@ -368,8 +322,8 @@
   
   <entry>
     <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/%E5%9C%A8commit%E5%89%8D%E5%BC%BA%E5%88%B6lint/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/在commit前强制lint/</id>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/take/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Rx.js/take/</id>
     <published>2017-10-04T02:17:03.000Z</published>
     <updated>2017-10-04T02:17:03.000Z</updated>
     
@@ -379,8 +333,52 @@
       
         
         
-          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h2&gt;&lt;p&gt;是不是有人在commit前不lint，&lt;br&gt;导致推送了垃圾代码？&lt;br&gt;那我们就让你不lint就commit不了。&lt;/p&gt;
-&lt;h2
+          &lt;h2 id=&quot;take&quot;&gt;&lt;a href=&quot;#take&quot; class=&quot;headerlink&quot; title=&quot;take&quot;&gt;&lt;/a&gt;take&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;Takes the first count values from the source,
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/startWith/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Rx.js/startWith/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;startWith&quot;&gt;&lt;a href=&quot;#startWith&quot; class=&quot;headerlink&quot; title=&quot;startWith&quot;&gt;&lt;/a&gt;startWith&lt;/h2&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/defer/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Rx.js/defer/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;defer&quot;&gt;&lt;a href=&quot;#defer&quot; class=&quot;headerlink&quot; title=&quot;defer&quot;&gt;&lt;/a&gt;defer&lt;/h2&gt;&lt;p&gt;&lt;a
         
       
     
@@ -414,8 +412,8 @@
   
   <entry>
     <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Git/%E6%9B%B4%E6%96%B0Fork%E7%9A%84%E9%A1%B9%E7%9B%AE/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Git/更新Fork的项目/</id>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/%E4%BD%BF%E7%94%A8http-server%E5%88%9B%E5%BB%BA%E4%B8%B4%E6%97%B6%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/使用http-server创建临时服务/</id>
     <published>2017-10-04T02:17:03.000Z</published>
     <updated>2017-10-04T02:17:03.000Z</updated>
     
@@ -425,7 +423,7 @@
       
         
         
-          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot;
+          &lt;p&gt;有这么一个场景，&lt;br&gt;你从别处弄来了一个工程，&lt;br&gt;里面塞满了html文件，&lt;br&gt;此时你需要看看这个工程是什么样的，&lt;br&gt;于是你随便打开了一个html文件，&lt;br&gt;发现整个网页是乱七八糟的，&lt;br&gt;没有CSS也没有JS，&lt;br&gt;因为你打开的方式是file而不是htt
         
       
     
@@ -458,8 +456,8 @@
   
   <entry>
     <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/%E4%BD%BF%E7%94%A8mkdirp%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/使用mkdirp创建文件夹/</id>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/empty/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Rx.js/empty/</id>
     <published>2017-10-04T02:17:03.000Z</published>
     <updated>2017-10-04T02:17:03.000Z</updated>
     
@@ -469,7 +467,7 @@
       
         
         
-          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;empty&quot;&gt;&lt;a href=&quot;#empty&quot; class=&quot;headerlink&quot; title=&quot;empty&quot;&gt;&lt;/a&gt;empty&lt;/h2&gt;&lt;p&gt;&lt;a
         
       
     

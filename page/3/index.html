@@ -288,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/使用http-server创建临时服务/">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/concat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Limichange">
@@ -307,7 +307,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/04/Nodejs/使用http-server创建临时服务/" itemprop="url">Untitled</a></h2>
+                <a class="post-title-link" href="/2017/10/04/Rx.js/concat/" itemprop="url">Untitled</a></h2>
         
 
         <div class="post-meta">
@@ -359,13 +359,8 @@
       
         
           
-            <p>有这么一个场景，<br>你从别处弄来了一个工程，<br>里面塞满了html文件，<br>此时你需要看看这个工程是什么样的，<br>于是你随便打开了一个html文件，<br>发现整个网页是乱七八糟的，<br>没有CSS也没有JS，<br>因为你打开的方式是file而不是http，<br>这个时候你就需要快速的在这个文件夹下创建一个http服务器，<br>你需要<code>http-server</code>。</p>
-<p>安装。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install http-server -g</div></pre></td></tr></table></figure></p>
-<p>然后跳到那个项目的目录下，<br>运行命令。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">➜  blog git:(master) ✗ http-server .</div><div class="line">Starting up http-server, serving .</div><div class="line">Available on:</div><div class="line">  http://127.0.0.1:8080</div><div class="line">  http://192.168.2.194:8080</div><div class="line">Hit CTRL-C to stop the server</div></pre></td></tr></table></figure></p>
-<p>打开他提示的地址，<br>一切ok，<br>是不是很方便？</p>
-<blockquote>
-<p>http-server<br>A simple zero-configuration command-line http server<br><a href="https://www.npmjs.com/package/http-server" target="_blank" rel="external">https://www.npmjs.com/package/http-server</a></p>
-</blockquote>
+            <h1 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h1><p>印象中是用来处理数组合并的，<br>rxjs里是把Observable做合并，<br>将多个流处理成一个流。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> numbers = Rx.Observable.of(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>);</div><div class="line"><span class="keyword">var</span> letters = Rx.Observable.of(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>);</div><div class="line"><span class="keyword">var</span> interval = Rx.Observable.interval(<span class="number">1000</span>);</div><div class="line"><span class="keyword">var</span> result = numbers.concat(letters).concat(interval);</div><div class="line">result.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</div></pre></td></tr></table></figure>
 
           
         
@@ -414,7 +409,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/defer/">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/Rxjs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Limichange">
@@ -433,7 +428,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/04/Rx.js/defer/" itemprop="url">Untitled</a></h2>
+                <a class="post-title-link" href="/2017/10/04/Rx.js/Rxjs/" itemprop="url">Untitled</a></h2>
         
 
         <div class="post-meta">
@@ -485,13 +480,22 @@
       
         
           
-            <h2 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h2><p><a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-defer" target="_blank" rel="external">http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-defer</a></p>
-<blockquote>
-<p>Creates the Observable lazily, that is, only when it is subscribed.</p>
+            <blockquote>
+<p>内容整理自<br><a href="https://www.youtube.com/watch?v=ei7FsoXKPl0" target="_blank" rel="external">https://www.youtube.com/watch?v=ei7FsoXKPl0</a><br><a href="http://reactivex.io/rxjs/manual/overview.html" target="_blank" rel="external">http://reactivex.io/rxjs/manual/overview.html</a></p>
 </blockquote>
-<p>下面的基本逻辑是根据条件生成发送。<br>就是说如果随机数大于0.5，<br>那么就会匹配第一个发送源，<br>如果是小于0.5，<br>那么就匹配第二个。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> clicksOrInterval = Rx.Observable.defer(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (<span class="built_in">Math</span>.random() &gt; <span class="number">0.5</span>) &#123;</div><div class="line">    <span class="keyword">return</span> Rx.Observable.fromEvent(<span class="built_in">document</span>, <span class="string">'click'</span>);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">return</span> Rx.Observable.interval(<span class="number">1000</span>);</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line">clicksOrInterval.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</div></pre></td></tr></table></figure>
-
+<h2 id="Rxjs"><a href="#Rxjs" class="headerlink" title="Rxjs"></a>Rxjs</h2><p>RxJS is a library for composing asynchronous and event-based programs by using observable sequences. It provides one core type, the Observable, satellite types (Observer, Schedulers, Subjects) and operators inspired by Array#extras (map, filter, reduce, every, etc) to allow handling asynchronous events as collections.</p>
+<blockquote>
+<p>Think of RxJS as Lodash for events.</p>
+</blockquote>
+<p>响应式编程。</p>
+<p>观察者模式。</p>
+<p>迭代器模式。</p>
+<h2 id="调试模板"><a href="#调试模板" class="headerlink" title="调试模板"></a>调试模板</h2><p><a href="https://jsfiddle.net/yztmb0dz/" target="_blank" rel="external">https://jsfiddle.net/yztmb0dz/</a></p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>开头是一个点，<br>结束时一个点，<br>数据在两个点之间流动。</p>
+<p>在生产线的开头投入原料，<br>中间经过各种加工处理，<br>最终在出口得到成品。</p>
+<h3 id="流（Stream）"><a href="#流（Stream）" class="headerlink" title="流（Stream）"></a>流（Stream）</h3><h3 id="操作器（Operator）"><a href="#操作器（Operator）" class="headerlink" title="操作器（Operator）"></a>操作器（Operator）</h3><h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><p>做属性过滤</p>
+<h4 id="scan"><a href="#scan" class="headerlink" title="scan"></a>scan</h4><p>reduce</p>
+<h3 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h3>
           
         
       
@@ -677,7 +681,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/take/">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Project/SPA部署流程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Limichange">
@@ -696,7 +700,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/04/Rx.js/take/" itemprop="url">Untitled</a></h2>
+                <a class="post-title-link" href="/2017/10/04/Project/SPA部署流程/" itemprop="url">Untitled</a></h2>
         
 
         <div class="post-meta">
@@ -748,11 +752,630 @@
       
         
           
-            <h2 id="take"><a href="#take" class="headerlink" title="take"></a>take</h2><blockquote>
-<p>Takes the first count values from the source, then completes.</p>
+            <p>##</p>
+<p>由于SPA的分离性导致Feature无法前后同时上线，这样就会产生一个很严重的问题。<br>就是当一方上线后，另一方还没有准备好。</p>
+<h2 id="接口上线"><a href="#接口上线" class="headerlink" title="接口上线"></a>接口上线</h2><h2 id="启用Feature-Config"><a href="#启用Feature-Config" class="headerlink" title="启用Feature Config"></a>启用Feature Config</h2><h2 id="如果不在乎"><a href="#如果不在乎" class="headerlink" title="如果不在乎"></a>如果不在乎</h2><p>那就当我没说</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Nuxt/init/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Limichange">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Limichange Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/04/Nuxt/init/" itemprop="url">Untitled</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T10:17:03+08:00">
+                2017-10-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>nuxt补全了vue前后端的同构，<br>虽然vue已经提供了官方的ssr，<br>但不是很好用，<br>nuxt做了很好的api来提供使用，<br>与express衔接良好。</p>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><p>官方提供了友好的脚手架供一键搭建。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 初始化</span></div><div class="line">$ vue init nuxt/express</div><div class="line"></div><div class="line"><span class="comment"># 安装包</span></div><div class="line">$ yarn</div><div class="line"></div><div class="line"><span class="comment"># 部署</span></div><div class="line">$ now</div></pre></td></tr></table></figure></p>
+<p>不到十分钟，<br>就部署到了线上，<br>效果也很不错。</p>
+<h2 id="看法"><a href="#看法" class="headerlink" title="看法"></a>看法</h2><p>上手很流畅，<br>之后再写几篇，<br>不出意外的话博客就用这个搭建了，<br>之前也是因为看到这个出了，<br>才停掉了之前写的client和server。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/在commit前强制lint/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Limichange">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Limichange Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/04/Nodejs/在commit前强制lint/" itemprop="url">Untitled</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T10:17:03+08:00">
+                2017-10-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>是不是有人在commit前不lint，<br>导致推送了垃圾代码？<br>那我们就让你不lint就commit不了。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>我们使用<code>pre-commit</code>来实现这个需求，<br>让我们简单的配置一下。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install pre-commit --save-dev</div></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"scripts"</span>: &#123;</div><div class="line">    <span class="attr">"lint"</span>: <span class="string">"eslint ./ --cache --ignore-pattern .gitignore"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"pre-commit"</span>: [ <span class="string">"lint"</span> ],</div><div class="line">  <span class="attr">"devDependencies"</span>: &#123;</div><div class="line">    <span class="attr">"eslint"</span>: <span class="string">"^2.12.0"</span>,</div><div class="line">    <span class="attr">"pre-commit"</span>: <span class="string">"^1.1.3"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>就这样。<br>当然我们也可以在commit之前添加测试或其他命令，<br>记住要抛出报错。<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"scripts"</span>: &#123;</div><div class="line">    <span class="attr">"lint"</span>: <span class="string">"eslint ./ --cache --ignore-pattern .gitignore"</span>,</div><div class="line">    <span class="attr">"precommit-msg"</span>: <span class="string">"echo 'Pre-commit checks...' &amp;&amp; exit 0"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"pre-commit"</span>: [ <span class="string">"precommit-msg"</span>, <span class="string">"lint"</span> ],</div><div class="line">  <span class="attr">"devDependencies"</span>: &#123;</div><div class="line">    <span class="attr">"eslint"</span>: <span class="string">"^2.12.0"</span>,</div><div class="line">    <span class="attr">"pre-commit"</span>: <span class="string">"^1.1.3"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://elijahmanor.com/npm-precommit-scripts/" target="_blank" rel="external">http://elijahmanor.com/npm-precommit-scripts/</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/使用mkdirp创建文件夹/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Limichange">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Limichange Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/04/Nodejs/使用mkdirp创建文件夹/" itemprop="url">Untitled</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T10:17:03+08:00">
+                2017-10-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>当遇到创建文件夹的时候，<br>我们会遇见各种不同的情况，<br>如，<br>这个文件夹已经创建了怎么办，<br>这个时候fs就不是那么好用了，<br>此时可以用mkdirp。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>如下<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mkdirp = <span class="built_in">require</span>(<span class="string">'mkdirp'</span>)</div><div class="line"></div><div class="line">mkdirp(<span class="string">'/tmp/foo/bar/baz'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="built_in">console</span>.error(err)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'pow!'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>扒了源码看了一下，<br>囫囵吞枣。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Git/更新Fork的项目/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Limichange">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Limichange Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/04/Git/更新Fork的项目/" itemprop="url">Untitled</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T10:17:03+08:00">
+                2017-10-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>在Github上Fork了一个项目后慢慢看，<br>在某一天，<br>这个项目更新了，<br>这个时候你也需要更新，<br>这个时候怎么办呢？<br>超简单，<br>按步骤来就可以了。</p>
+<h2 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h2><p>你需要一个Fork的项目，<br>这个很简单，<br>上Github上点一下Fork就可以了。</p>
+<h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><p>下载自己Fork的项目。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> git@github.com:limichange/docs.git</div><div class="line">Cloning into <span class="string">'docs'</span>...</div><div class="line">remote: Counting objects: 598, <span class="keyword">done</span>.</div><div class="line">remote: Compressing objects: 100% (76/76), <span class="keyword">done</span>.</div><div class="line">remote: Total 598 (delta 39), reused 0 (delta 0), pack-reused 522</div><div class="line">Receiving objects: 100% (598/598), 111.61 KiB | 3.00 KiB/s, <span class="keyword">done</span>.</div><div class="line">Resolving deltas: 100% (287/287), <span class="keyword">done</span>.</div></pre></td></tr></table></figure></p>
+<p>进去。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> docs</div></pre></td></tr></table></figure></p>
+<p>添加源项目。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add upstream https://github.com/nuxt/docs.git</div></pre></td></tr></table></figure></p>
+<p>下载源项目最新的代码。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ git fetch upstream</div><div class="line">remote: Counting objects: 6, <span class="keyword">done</span>.</div><div class="line">remote: Compressing objects: 100% (1/1), <span class="keyword">done</span>.</div><div class="line">remote: Total 6 (delta 5), reused 6 (delta 5), pack-reused 0</div><div class="line">Unpacking objects: 100% (6/6), <span class="keyword">done</span>.</div><div class="line">From https://github.com/nuxt/docs</div><div class="line"> * [new branch]      master     -&gt; upstream/master</div></pre></td></tr></table></figure></p>
+<p>合并。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git merge upstream/master</div><div class="line">Updating 3790576..8b3978b</div><div class="line">Fast-forward</div><div class="line"> en/guide/commands.md | 2 +-</div><div class="line"> en/guide/pages.md    | 4 +++-</div><div class="line"> 2 files changed, 4 insertions(+), 2 deletions(-)</div></pre></td></tr></table></figure></p>
+<p>Push到自己那边。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ git push</div><div class="line">Counting objects: 6, <span class="keyword">done</span>.</div><div class="line">Delta compression using up to 4 threads.</div><div class="line">Compressing objects: 100% (6/6), <span class="keyword">done</span>.</div><div class="line">Writing objects: 100% (6/6), 673 bytes | 0 bytes/s, <span class="keyword">done</span>.</div><div class="line">Total 6 (delta 5), reused 0 (delta 0)</div><div class="line">remote: Resolving deltas: 100% (5/5), completed with 5 <span class="built_in">local</span> objects.</div><div class="line">To github.com:limichange/docs.git</div><div class="line">  3790576..8b3978b  master -&gt; master</div></pre></td></tr></table></figure></p>
+<p>完。</p>
+<h2 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h2><p><a href="http://www.cnblogs.com/zyumeng/p/3442263.html" target="_blank" rel="external">http://www.cnblogs.com/zyumeng/p/3442263.html</a><br><a href="http://geek.csdn.net/news/detail/67091" target="_blank" rel="external">http://geek.csdn.net/news/detail/67091</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/08/08/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Limichange">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Limichange Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/08/README/" itemprop="url">test</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-08T15:27:03+08:00">
+                2017-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="⛩-Limichange-Blog"><a href="#⛩-Limichange-Blog" class="headerlink" title="⛩ Limichange Blog"></a>⛩ Limichange Blog</h1><blockquote>
+<p>老是胃疼</p>
 </blockquote>
-<p>确定一个数量，按数量提取。<br>下面这个例子就是只拿5次值。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> interval = Rx.Observable.interval(<span class="number">1000</span>);</div><div class="line"><span class="keyword">var</span> five = interval.take(<span class="number">5</span>);</div><div class="line">five.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</div></pre></td></tr></table></figure>
 
           
         
@@ -801,7 +1424,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/concat/">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/04/30/Mysql/The server quit without updating PID file/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Limichange">
@@ -820,7 +1443,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/04/Rx.js/concat/" itemprop="url">Untitled</a></h2>
+                <a class="post-title-link" href="/2017/04/30/Mysql/The server quit without updating PID file/" itemprop="url">Mac启动Mysql的时候产生报错</a></h2>
         
 
         <div class="post-meta">
@@ -832,8 +1455,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T10:17:03+08:00">
-                2017-10-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-30T10:48:11+08:00">
+                2017-04-30
               </time>
             
 
@@ -872,644 +1495,13 @@
       
         
           
-            <h1 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h1><p>印象中是用来处理数组合并的，<br>rxjs里是把Observable做合并，<br>将多个流处理成一个流。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> numbers = Rx.Observable.of(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>);</div><div class="line"><span class="keyword">var</span> letters = Rx.Observable.of(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>);</div><div class="line"><span class="keyword">var</span> interval = Rx.Observable.interval(<span class="number">1000</span>);</div><div class="line"><span class="keyword">var</span> result = numbers.concat(letters).concat(interval);</div><div class="line">result.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/使用bcryptjs加密/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Limichange">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Limichange Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/04/Nodejs/使用bcryptjs加密/" itemprop="url">Untitled</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T10:17:03+08:00">
-                2017-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>自己做实验用到了<code>bcryptjs</code> ，<br>遂，<br>记一下。</p>
-<blockquote>
-<p><a href="https://www.npmjs.com/package/bcryptjs" target="_blank" rel="external">https://www.npmjs.com/package/bcryptjs</a><br>Optimized bcrypt in plain JavaScript with zero dependencies. Compatible to ‘bcrypt’.</p>
-</blockquote>
-<p>起初是在Ghost的源码里看到的，<br>用来加密密码的。</p>
-<p>用起来还是蛮简单的。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> bcrypt = <span class="built_in">require</span>(<span class="string">'bcryptjs'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> salt = bcrypt.genSaltSync(<span class="number">10</span>);</div><div class="line"><span class="built_in">console</span>.log(salt)</div><div class="line"><span class="comment">// -&gt; $2a$10$b8N4nTRQ8xjZDqehvlQ8Z.</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> hash = bcrypt.hashSync(<span class="string">"mypassword"</span>, salt);</div><div class="line"><span class="built_in">console</span>.log(hash)</div><div class="line"><span class="comment">// -&gt; $2a$10$b8N4nTRQ8xjZDqehvlQ8Z.dVkvTh9yHSYz9WbDqp8DCigx72.iyZ6</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> hash2 = bcrypt.hashSync(<span class="string">'mypassword'</span>, <span class="number">10</span>);</div><div class="line"><span class="built_in">console</span>.log(hash2)</div><div class="line"><span class="comment">// -&gt; $2a$10$i1Nr.nKItHtDejf6ML8NduZAfFq0sTHhVO7ikRonJPZNY3Z5MG2Iy</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(bcrypt.compareSync(<span class="string">"mypassword"</span>, hash));</div><div class="line"><span class="comment">// -&gt; true</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(bcrypt.compareSync(<span class="string">"mypassword"</span>, hash2));</div><div class="line"><span class="comment">// -&gt; true</span></div></pre></td></tr></table></figure></p>
-<p>本着好奇心，<br>我去查了查这么方面的知识，<br>有用的我就列在下面了。<br><a href="http://www.cnblogs.com/lixiong/archive/2011/12/24/2300098.html" target="_blank" rel="external">http://www.cnblogs.com/lixiong/archive/2011/12/24/2300098.html</a><br><a href="https://segmentfault.com/a/1190000003024932" target="_blank" rel="external">https://segmentfault.com/a/1190000003024932</a><br><a href="https://segmentfault.com/q/1010000003054250" target="_blank" rel="external">https://segmentfault.com/q/1010000003054250</a><br><a href="https://segmentfault.com/a/1190000000401275" target="_blank" rel="external">https://segmentfault.com/a/1190000000401275</a></p>
-<p>然后我知道了两件事：</p>
-<ul>
-<li>CSDN的网站很渣</li>
-<li>bcrypt比md5要慢很多，但更加安全</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/passport-http-bearer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Limichange">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Limichange Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/04/Nodejs/passport-http-bearer/" itemprop="url">Untitled</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T10:17:03+08:00">
-                2017-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>给博客服务端写token的验证服务,<br>使用了passport作为处理工具,<br>配置了passport-http-bearer做为token的实现,<br>然而出现了坑,<br>摊手。</p>
-<p>在谷歌上查了几个答案就不行,<br>遂,<br>翻开源码直接看。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (req.headers &amp;&amp; req.headers.authorization) &#123;</div><div class="line">  <span class="keyword">var</span> parts = req.headers.authorization.split(<span class="string">' '</span>);</div><div class="line">  <span class="keyword">if</span> (parts.length == <span class="number">2</span>) &#123;</div><div class="line">    <span class="keyword">var</span> scheme = parts[<span class="number">0</span>]</div><div class="line">      , credentials = parts[<span class="number">1</span>];</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (<span class="regexp">/^Bearer$/i</span>.test(scheme)) &#123;</div><div class="line">      token = credentials;</div><div class="line">    &#125;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.fail(<span class="number">400</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (req.body &amp;&amp; req.body.access_token) &#123;</div><div class="line">  <span class="keyword">if</span> (token) &#123; <span class="keyword">return</span> <span class="keyword">this</span>.fail(<span class="number">400</span>); &#125;</div><div class="line">  token = req.body.access_token;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (req.query &amp;&amp; req.query.access_token) &#123;</div><div class="line">  <span class="keyword">if</span> (token) &#123; <span class="keyword">return</span> <span class="keyword">this</span>.fail(<span class="number">400</span>); &#125;</div><div class="line">  token = req.query.access_token;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>原来是这么检测的,<br>这个结构有点略奇葩。</p>
-<p>必须写进http请求的header里面才可以,<br>key,<br><code>Authorization</code>,<br>value,<br><code>Bearer 85d052bf-10b8-4298-8c75-f4673eb5278a</code>。</p>
-<p>get和post可以用各自的字段处理,<br>但最好还是写进header里,<br>一了百了。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/startWith/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Limichange">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Limichange Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/04/Rx.js/startWith/" itemprop="url">Untitled</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T10:17:03+08:00">
-                2017-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="startWith"><a href="#startWith" class="headerlink" title="startWith"></a>startWith</h2><p><a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-empty" target="_blank" rel="external">http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-empty</a></p>
-<blockquote>
-<p>Returns an Observable that emits the items in a specified Iterable before it begins to emit items emitted by the source Observable.</p>
-</blockquote>
-<p>这个没有例子我自己写一个。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/empty/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Limichange">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Limichange Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/04/Rx.js/empty/" itemprop="url">Untitled</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T10:17:03+08:00">
-                2017-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="empty"><a href="#empty" class="headerlink" title="empty"></a>empty</h2><p><a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-empty" target="_blank" rel="external">http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#static-method-empty</a></p>
-<blockquote>
-<p>Just emits ‘complete’, and nothing else.</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = Rx.Observable.empty().startWith(<span class="number">7</span>);</div><div class="line">result.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> interval = Rx.Observable.interval(<span class="number">1000</span>);</div><div class="line"><span class="keyword">var</span> result = interval.mergeMap(<span class="function"><span class="params">x</span> =&gt;</span></div><div class="line">  x % <span class="number">2</span> === <span class="number">1</span> ? Rx.Observable.of(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>) : Rx.Observable.empty()</div><div class="line">);</div><div class="line">result.subscribe(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x));</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Nginx/nginx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Limichange">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Limichange Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/04/Nginx/nginx/" itemprop="url">Untitled</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T10:17:03+08:00">
-                2017-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h2><p>Nginx入门可以看看这篇，<br>主要是学一些基本的用法。</p>
-<h2 id="安装运行"><a href="#安装运行" class="headerlink" title="安装运行"></a>安装运行</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 安装</span></div><div class="line"><span class="meta">$</span><span class="bash"> brew install nginx</span></div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> 查看版本</span></div><div class="line"><span class="meta">$</span><span class="bash"> nginx -v</span></div><div class="line">nginx version: nginx/1.10.2</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> 运行</span></div><div class="line"><span class="meta">$</span><span class="bash"> nginx</span></div></pre></td></tr></table></figure>
-<p>查看<code>http://localhost:8080/</code>会看到欢迎的页面。</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 停止</span></div><div class="line"><span class="meta">$</span><span class="bash"> nginx -s stop</span></div></pre></td></tr></table></figure>
-<p>此时页面就无法访问了。<br>我们来看看配置文件是什么样的。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> vim /usr/<span class="built_in">local</span>/etc/nginx/nginx.conf</span></div></pre></td></tr></table></figure>
-<p>文件还挺大的，<br>为了方便看，<br>我们先把注释的部分删掉。<br>为了方便看，<br>就直接把解释放进去了。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> nginx worker进程数，建议设置为等于CPU总核心数。</span></div><div class="line">worker_processes  1;</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> events模块设置事件模型与连接数上限</span></div><div class="line">events &#123;</div><div class="line"></div><div class="line">    # 单个进程最大连接数（最大连接数 = 连接数 * 进程数）</div><div class="line">    worker_connections  1024;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> 设定http服务器，利用它的反向代理功能提供负载均衡支持，这是nginx的核心模块</span></div><div class="line">http &#123;</div><div class="line"></div><div class="line">    # 设定mime类型，类型由mime.type文件定义(文件扩展名与文件类型映射表)</div><div class="line">    include       mime.types;</div><div class="line"></div><div class="line">    # 指定默认文件类型为二进制流</div><div class="line">    default_type  application/octet-stream;</div><div class="line"></div><div class="line">    # 用于开启高效文件传输模式</div><div class="line">    sendfile        on;</div><div class="line"></div><div class="line">    # 长连接超时时间，单位是秒</div><div class="line">    keepalive_timeout  65;</div><div class="line"></div><div class="line">    # 虚拟主机的配置</div><div class="line">    server &#123;</div><div class="line"></div><div class="line">        # 配置监听端口</div><div class="line">        listen       8080;</div><div class="line"></div><div class="line">        # 配置访问域名</div><div class="line">        server_name  localhost;</div><div class="line"></div><div class="line">        # 配置根路径</div><div class="line">        location / &#123;</div><div class="line">            root   html;</div><div class="line">            index  index.html index.htm;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        # 配置错误页</div><div class="line">        error_page   500 502 503 504  /50x.html;</div><div class="line">        location = /50x.html &#123;</div><div class="line">            root   html;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    # 包含其他的配置文件</div><div class="line">    include servers/*;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>我们把指向的目录改一下，<br>重启下，<br>页面的内容就变了。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 配置根路径</span></div><div class="line"><span class="meta">#</span><span class="bash"> /Users/limi 这个目录下需要有一个index.html或index.htm</span></div><div class="line">location / &#123;</div><div class="line">    root   /Users/limi;</div><div class="line">    index  index.html index.htm;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这配置只是其中的一小部分，<br>还有很多的功能可以开启。</p>
-<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><p><a href="http://learnaholic.me/2012/10/10/installing-nginx-in-mac-os-x-mountain-lion/" target="_blank" rel="external">http://learnaholic.me/2012/10/10/installing-nginx-in-mac-os-x-mountain-lion/</a><br><a href="http://nginx.org/en/docs/beginners_guide.html" target="_blank" rel="external">http://nginx.org/en/docs/beginners_guide.html</a><br><a href="http://tengine.taobao.org/documentation_cn.html" target="_blank" rel="external">http://tengine.taobao.org/documentation_cn.html</a><br><a href="http://webres.wang/nginx-config-summary/" target="_blank" rel="external">http://webres.wang/nginx-config-summary/</a><br><a href="https://fraserxu.me/2013/06/22/Nginx-for-developers/" target="_blank" rel="external">https://fraserxu.me/2013/06/22/Nginx-for-developers/</a><br><a href="http://www.ha97.com/5194.html" target="_blank" rel="external">http://www.ha97.com/5194.html</a><br><a href="http://www.wiquan.com/article/597" target="_blank" rel="external">http://www.wiquan.com/article/597</a></p>
+            <p>这是一个在Mac启动Mysql的时候产生的一个报错。</p>
+<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>查看此文件的详情<br>/usr/local/var/mysql/your_computer_name.local.err</p>
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>查看是否正在运行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> ps -ef | grep mysql</span></div></pre></td></tr></table></figure></p>
+<p>停止服务<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">kill</span> -9 PID</span></div></pre></td></tr></table></figure></p>
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><p>查看权限<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> ls -laF /usr/<span class="built_in">local</span>/var/mysql/</span></div></pre></td></tr></table></figure></p>
+<p>修改执行的权限<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> sudo chown -R mysql /usr/<span class="built_in">local</span>/var/mysql/</span></div></pre></td></tr></table></figure></p>
+<h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><p>重新运行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> mysql.server start</span></div></pre></td></tr></table></figure></p>
 
           
         
@@ -1608,7 +1600,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

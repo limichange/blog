@@ -1,7 +1,7 @@
 ---
-title: My Animation List
+title: UglifyJy一个报错
 date: 2016-01-12 19:42:02
-tags: [tool, webpack]
+tags: [uglify, js, npm, es]
 ---
 
 ## 场景

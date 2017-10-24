@@ -396,7 +396,7 @@ $ npm home koa-compose
 确保你对`Promise`已经很熟悉了，不然你会对接下里的讲解很困惑。
 
 为了更好的理解下面的运行原理，先让我们复习一下koa的中间件运行顺序，只要弄明白下图是怎么回事就可以了。
-![middleware.gif](https://github.com/koajs/koa/blob/master/docs/middleware.gif)
+![middleware.gif](/images/middleware.gif)
 
 很好，那我们开始。
 噢，对，记得把它想象成洋葱。
@@ -447,6 +447,11 @@ function compose (middleware) {
 稀里糊涂的感觉？那就来看看[compose的单元测试](https://github.com/koajs/compose/blob/master/test/test.js)。一般对函数的定义理解不过来的时候，去翻一下注释是个很好的主意，测试里定义了函数的所有行为。
 
 现在你可以感觉到，这个过程就是就是把一堆中间件给压缩成一个函数，用来处理网络请求。也就顺便弄清了中间件的整个处理过程。
+
+## 总结
+
+我画了一张图，我们看看图就可以了。
+![koa2.jpeg](/images/koa2.jpeg)
 
 ## 结束
 

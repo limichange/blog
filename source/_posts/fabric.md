@@ -36,3 +36,19 @@ canvas.renderAll()
 ### 放大镜
 
 http://jsfiddle.net/powerc9000/G39W9/
+
+### 边框会变粗
+
+```js
+canvas.on({
+  'object:scaling': function (e) {
+    let obj = e.target
+    if (obj.myCustomOptionKeepStrokeWidth) {
+      let newStrokeWidth = obj.myCustomOptionKeepStrokeWidth / ((obj.scaleX + obj.scaleY) / 2)
+      obj.set('strokeWidth', newStrokeWidth)
+    }
+  }
+})
+```
+
+似乎作者认为边框会随着变形变宽就是正确的。这是一种折中的方案，会尽量的缩小边框。

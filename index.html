@@ -288,6 +288,265 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/11/01/fabric/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Limichange">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Limichange Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/01/fabric/" itemprop="url">fabric 中的坑</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-01T10:02:18+08:00">
+                2017-11-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="最近"><a href="#最近" class="headerlink" title="最近"></a>最近</h2><p>需要做一个编辑器，所以用到了<code>fabric</code>，然后就遇到了不少坑，特此记录一下。</p>
+<h3 id="获取元素的宽高"><a href="#获取元素的宽高" class="headerlink" title="获取元素的宽高"></a>获取元素的宽高</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> width = k.getWidth()</div><div class="line"><span class="keyword">const</span> height = k.getHeight()</div></pre></td></tr></table></figure>
+<p>不要去直接的读取<code>width</code>和<code>height</code>属性，因为会有缓存，这两个属性值并不一定是最新的。</p>
+<h3 id="选取范围没有刷新"><a href="#选取范围没有刷新" class="headerlink" title="选取范围没有刷新"></a>选取范围没有刷新</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rect.setCoords()</div></pre></td></tr></table></figure>
+<p>当你动态的设置了位置或者大小后，图形的选取范围会没有刷新，大小还是停留在上一个位置上。这个时候需要自己手动的刷新。</p>
+<h3 id="图像没有刷新"><a href="#图像没有刷新" class="headerlink" title="图像没有刷新"></a>图像没有刷新</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">canvas.renderAll()</div></pre></td></tr></table></figure>
+<p>如果碰到了什么没有刷新的情况，可以尝试使用这个方法。</p>
+<h3 id="放大镜"><a href="#放大镜" class="headerlink" title="放大镜"></a>放大镜</h3><p><a href="http://jsfiddle.net/powerc9000/G39W9/" target="_blank" rel="external">http://jsfiddle.net/powerc9000/G39W9/</a></p>
+<h3 id="边框会变粗"><a href="#边框会变粗" class="headerlink" title="边框会变粗"></a>边框会变粗</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">canvas.on(&#123;</div><div class="line">  <span class="string">'object:scaling'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> obj = e.target</div><div class="line">    <span class="keyword">if</span> (obj.myCustomOptionKeepStrokeWidth) &#123;</div><div class="line">      <span class="keyword">let</span> newStrokeWidth = obj.myCustomOptionKeepStrokeWidth / ((obj.scaleX + obj.scaleY) / <span class="number">2</span>)</div><div class="line">      obj.set(<span class="string">'strokeWidth'</span>, newStrokeWidth)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>似乎作者认为边框会随着变形变宽就是正确的。这是一种折中的方案，会尽量的缩小边框。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/20/租房别租阁楼顶楼/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Limichange">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Limichange Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/20/租房别租阁楼顶楼/" itemprop="url">租房别租阁楼顶楼</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-20T10:30:08+08:00">
+                2017-10-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近换租了，租到了一个新的小区。租的11楼，其实是一个双层房子的一个单间，在里面的第二层。于是就有些蛋疼了。</p>
+<ul>
+<li>在主道路附近，车声音有些多。</li>
+<li>电梯电机就在隔着的一个房间，不知隔壁好不好。</li>
+<li>这个小区的房顶设计有问题，感觉很薄，声音老是透过来。</li>
+<li>下雨的时候房顶会有声响，老感觉很薄。</li>
+<li>上下小楼梯会有声音，不是很舒服，感觉有些麻烦。</li>
+<li>水路在隔壁，用水会有声音。</li>
+</ul>
+<p>总体就是老有声响，其他的倒也还好。租房总有各种各样的麻烦和问题，慢慢适应就好了。</p>
+<p><del>不知什么时候才能有自己的房子</del></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/16/postWindow/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -943,11 +1202,12 @@
 <p>是一个独立的库。这里说一下，我们可以在命令行通过一个命令快速的找到一个库的实现。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> npm home koa-compose</div></pre></td></tr></table></figure></p>
 <p>是不是很方便？我们把<a href="https://github.com/koajs/compose/blob/master/index.js" target="_blank" rel="external">定义的文件</a>打开看看。为了方便讲解，我把其中的注释和部分类型判断删掉了。</p>
 <p>确保你对<code>Promise</code>已经很熟悉了，不然你会对接下里的讲解很困惑。</p>
-<p>为了更好的理解下面的运行原理，先让我们复习一下koa的中间件运行顺序，只要弄明白下图是怎么回事就可以了。<br><img src="https://github.com/koajs/koa/blob/master/docs/middleware.gif" alt="middleware.gif"></p>
+<p>为了更好的理解下面的运行原理，先让我们复习一下koa的中间件运行顺序，只要弄明白下图是怎么回事就可以了。<br><img src="/images/middleware.gif" alt="middleware.gif"></p>
 <p>很好，那我们开始。<br>噢，对，记得把它想象成洋葱。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">compose</span> (<span class="params">middleware</span>) </span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">// 首先会返回一个函数，就是createContext里的fn</span></div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">context, next</span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// 标识</span></div><div class="line">    <span class="keyword">let</span> index = <span class="number">-1</span></div><div class="line"></div><div class="line">    <span class="comment">// 调用第一个中间件，然后开始循环调用</span></div><div class="line">    <span class="keyword">return</span> dispatch(<span class="number">0</span>)</div><div class="line"></div><div class="line">    <span class="comment">// 调用中间件</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dispatch</span> (<span class="params">i</span>) </span>&#123;</div><div class="line"></div><div class="line">      <span class="comment">// 你不可以再一次请求里多次调用next</span></div><div class="line">      <span class="keyword">if</span> (i &lt;= index) <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'next() called multiple times'</span>))</div><div class="line"></div><div class="line">      <span class="comment">// 记录这是第几个中间件</span></div><div class="line">      index = i</div><div class="line"></div><div class="line">      <span class="comment">// 把中间件赋值为fn，这里可以知道，中间件的调用顺序取决于之前用use的顺序</span></div><div class="line">      <span class="keyword">let</span> fn = middleware[i]</div><div class="line"></div><div class="line">      <span class="comment">// 最后一次的时候，把next当成fn来处理，为了防止无限循环</span></div><div class="line">      <span class="comment">// https://github.com/koajs/compose/commit/2200a75657e1facd29718d84cf1e47677bfb6156</span></div><div class="line">      <span class="keyword">if</span> (i === middleware.length) fn = next</div><div class="line"></div><div class="line">      <span class="comment">// fn没有了的话，就是处理完毕了</span></div><div class="line">      <span class="keyword">if</span> (!fn) <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve()</div><div class="line">      <span class="keyword">try</span> &#123;</div><div class="line">        <span class="comment">// 循环调用，把标志加一，这样就会调用下一个中间件了</span></div><div class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(fn(context, <span class="function"><span class="keyword">function</span> <span class="title">next</span> (<span class="params"></span>) </span>&#123;</div><div class="line">          <span class="keyword">return</span> dispatch(i + <span class="number">1</span>)</div><div class="line">        &#125;))</div><div class="line">      &#125; <span class="keyword">catch</span> (err) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(err)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>稀里糊涂的感觉？那就来看看<a href="https://github.com/koajs/compose/blob/master/test/test.js" target="_blank" rel="external">compose的单元测试</a>。一般对函数的定义理解不过来的时候，去翻一下注释是个很好的主意，测试里定义了函数的所有行为。</p>
 <p>现在你可以感觉到，这个过程就是就是把一堆中间件给压缩成一个函数，用来处理网络请求。也就顺便弄清了中间件的整个处理过程。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我画了一张图，我们看看图就可以了。<br><img src="/images/koa2.jpeg" alt="koa2.jpeg"></p>
 <h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>koa的源码很精简，因为他把所有的额外功能都交给了其他的中间件，比如模板和路由。整个过程中，最有趣的部分莫过于中间件的处理。</p>
 <p>感谢你的阅读 ：D</p>
 
@@ -1359,261 +1619,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/passport-http-bearer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Limichange">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Limichange Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/04/Nodejs/passport-http-bearer/" itemprop="url">Untitled</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T10:17:03+08:00">
-                2017-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>给博客服务端写token的验证服务,<br>使用了passport作为处理工具,<br>配置了passport-http-bearer做为token的实现,<br>然而出现了坑,<br>摊手。</p>
-<p>在谷歌上查了几个答案就不行,<br>遂,<br>翻开源码直接看。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (req.headers &amp;&amp; req.headers.authorization) &#123;</div><div class="line">  <span class="keyword">var</span> parts = req.headers.authorization.split(<span class="string">' '</span>);</div><div class="line">  <span class="keyword">if</span> (parts.length == <span class="number">2</span>) &#123;</div><div class="line">    <span class="keyword">var</span> scheme = parts[<span class="number">0</span>]</div><div class="line">      , credentials = parts[<span class="number">1</span>];</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (<span class="regexp">/^Bearer$/i</span>.test(scheme)) &#123;</div><div class="line">      token = credentials;</div><div class="line">    &#125;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.fail(<span class="number">400</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (req.body &amp;&amp; req.body.access_token) &#123;</div><div class="line">  <span class="keyword">if</span> (token) &#123; <span class="keyword">return</span> <span class="keyword">this</span>.fail(<span class="number">400</span>); &#125;</div><div class="line">  token = req.body.access_token;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (req.query &amp;&amp; req.query.access_token) &#123;</div><div class="line">  <span class="keyword">if</span> (token) &#123; <span class="keyword">return</span> <span class="keyword">this</span>.fail(<span class="number">400</span>); &#125;</div><div class="line">  token = req.query.access_token;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>原来是这么检测的,<br>这个结构有点略奇葩。</p>
-<p>必须写进http请求的header里面才可以,<br>key,<br><code>Authorization</code>,<br>value,<br><code>Bearer 85d052bf-10b8-4298-8c75-f4673eb5278a</code>。</p>
-<p>get和post可以用各自的字段处理,<br>但最好还是写进header里,<br>一了百了。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/10/04/Nginx/nginx/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Limichange">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Limichange Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/04/Nginx/nginx/" itemprop="url">Untitled</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-04T10:17:03+08:00">
-                2017-10-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h2><p>Nginx入门可以看看这篇，<br>主要是学一些基本的用法。</p>
-<h2 id="安装运行"><a href="#安装运行" class="headerlink" title="安装运行"></a>安装运行</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 安装</span></div><div class="line"><span class="meta">$</span><span class="bash"> brew install nginx</span></div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> 查看版本</span></div><div class="line"><span class="meta">$</span><span class="bash"> nginx -v</span></div><div class="line">nginx version: nginx/1.10.2</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> 运行</span></div><div class="line"><span class="meta">$</span><span class="bash"> nginx</span></div></pre></td></tr></table></figure>
-<p>查看<code>http://localhost:8080/</code>会看到欢迎的页面。</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 停止</span></div><div class="line"><span class="meta">$</span><span class="bash"> nginx -s stop</span></div></pre></td></tr></table></figure>
-<p>此时页面就无法访问了。<br>我们来看看配置文件是什么样的。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> vim /usr/<span class="built_in">local</span>/etc/nginx/nginx.conf</span></div></pre></td></tr></table></figure>
-<p>文件还挺大的，<br>为了方便看，<br>我们先把注释的部分删掉。<br>为了方便看，<br>就直接把解释放进去了。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> nginx worker进程数，建议设置为等于CPU总核心数。</span></div><div class="line">worker_processes  1;</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> events模块设置事件模型与连接数上限</span></div><div class="line">events &#123;</div><div class="line"></div><div class="line">    # 单个进程最大连接数（最大连接数 = 连接数 * 进程数）</div><div class="line">    worker_connections  1024;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> 设定http服务器，利用它的反向代理功能提供负载均衡支持，这是nginx的核心模块</span></div><div class="line">http &#123;</div><div class="line"></div><div class="line">    # 设定mime类型，类型由mime.type文件定义(文件扩展名与文件类型映射表)</div><div class="line">    include       mime.types;</div><div class="line"></div><div class="line">    # 指定默认文件类型为二进制流</div><div class="line">    default_type  application/octet-stream;</div><div class="line"></div><div class="line">    # 用于开启高效文件传输模式</div><div class="line">    sendfile        on;</div><div class="line"></div><div class="line">    # 长连接超时时间，单位是秒</div><div class="line">    keepalive_timeout  65;</div><div class="line"></div><div class="line">    # 虚拟主机的配置</div><div class="line">    server &#123;</div><div class="line"></div><div class="line">        # 配置监听端口</div><div class="line">        listen       8080;</div><div class="line"></div><div class="line">        # 配置访问域名</div><div class="line">        server_name  localhost;</div><div class="line"></div><div class="line">        # 配置根路径</div><div class="line">        location / &#123;</div><div class="line">            root   html;</div><div class="line">            index  index.html index.htm;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        # 配置错误页</div><div class="line">        error_page   500 502 503 504  /50x.html;</div><div class="line">        location = /50x.html &#123;</div><div class="line">            root   html;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    # 包含其他的配置文件</div><div class="line">    include servers/*;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>我们把指向的目录改一下，<br>重启下，<br>页面的内容就变了。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 配置根路径</span></div><div class="line"><span class="meta">#</span><span class="bash"> /Users/limi 这个目录下需要有一个index.html或index.htm</span></div><div class="line">location / &#123;</div><div class="line">    root   /Users/limi;</div><div class="line">    index  index.html index.htm;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>这配置只是其中的一小部分，<br>还有很多的功能可以开启。</p>
-<h2 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h2><p><a href="http://learnaholic.me/2012/10/10/installing-nginx-in-mac-os-x-mountain-lion/" target="_blank" rel="external">http://learnaholic.me/2012/10/10/installing-nginx-in-mac-os-x-mountain-lion/</a><br><a href="http://nginx.org/en/docs/beginners_guide.html" target="_blank" rel="external">http://nginx.org/en/docs/beginners_guide.html</a><br><a href="http://tengine.taobao.org/documentation_cn.html" target="_blank" rel="external">http://tengine.taobao.org/documentation_cn.html</a><br><a href="http://webres.wang/nginx-config-summary/" target="_blank" rel="external">http://webres.wang/nginx-config-summary/</a><br><a href="https://fraserxu.me/2013/06/22/Nginx-for-developers/" target="_blank" rel="external">https://fraserxu.me/2013/06/22/Nginx-for-developers/</a><br><a href="http://www.ha97.com/5194.html" target="_blank" rel="external">http://www.ha97.com/5194.html</a><br><a href="http://www.wiquan.com/article/597" target="_blank" rel="external">http://www.wiquan.com/article/597</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1664,7 +1669,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1677,7 +1682,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>

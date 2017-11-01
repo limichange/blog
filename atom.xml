@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://limichange.uedtoutiao.com/"/>
-  <updated>2017-10-16T12:56:12.000Z</updated>
+  <updated>2017-11-01T11:15:59.000Z</updated>
   <id>http://limichange.uedtoutiao.com/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>fabric 中的坑</title>
+    <link href="http://limichange.uedtoutiao.com/2017/11/01/fabric/"/>
+    <id>http://limichange.uedtoutiao.com/2017/11/01/fabric/</id>
+    <published>2017-11-01T02:02:18.000Z</published>
+    <updated>2017-11-01T11:15:59.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;最近&quot;&gt;&lt;a href=&quot;#最近&quot; class=&quot;headerlink&quot; title=&quot;最近&quot;&gt;&lt;/a&gt;最近&lt;/h2&gt;&lt;p&gt;需要做一个编辑器，所以用到了&lt;code&gt;fabric&lt;/code&gt;，然后就遇到了不少坑，特此记录一下。&lt;/p&gt;
+&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://limichange.uedtoutiao.com/tags/js/"/>
+    
+      <category term="canvas" scheme="http://limichange.uedtoutiao.com/tags/canvas/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>租房别租阁楼顶楼</title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/20/%E7%A7%9F%E6%88%BF%E5%88%AB%E7%A7%9F%E9%98%81%E6%A5%BC%E9%A1%B6%E6%A5%BC/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/20/租房别租阁楼顶楼/</id>
+    <published>2017-10-20T02:30:08.000Z</published>
+    <updated>2017-11-01T11:15:59.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近换租了，租到了一个新的小区。租的11楼，其实是一个双层房子的一个单间，在里面的第二层。于是就有些蛋疼了。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在主道路附近，车声音有些多。&lt;/li&gt;
+&lt;li&gt;电梯电机就在隔着的一个房间，不知隔壁好不好。&lt;/li&gt;
+&lt;li&gt;这个小区的房顶设计有问题，
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>使用postWindow在网页直接通信</title>
@@ -124,7 +177,7 @@
     <link href="http://limichange.uedtoutiao.com/2017/10/06/%E7%9C%8BKoa%E7%9A%84%E6%BA%90%E7%A0%81/"/>
     <id>http://limichange.uedtoutiao.com/2017/10/06/看Koa的源码/</id>
     <published>2017-10-06T08:09:19.000Z</published>
-    <updated>2017-10-16T12:56:12.000Z</updated>
+    <updated>2017-11-01T11:15:59.000Z</updated>
     
     <summary type="html">
     
@@ -226,8 +279,8 @@
   
   <entry>
     <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/passport-http-bearer/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/passport-http-bearer/</id>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/%E5%9C%A8commit%E5%89%8D%E5%BC%BA%E5%88%B6lint/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/在commit前强制lint/</id>
     <published>2017-10-04T02:17:03.000Z</published>
     <updated>2017-10-04T02:17:03.000Z</updated>
     
@@ -237,8 +290,8 @@
       
         
         
-          &lt;p&gt;给博客服务端写token的验证服务,&lt;br&gt;使用了passport作为处理工具,&lt;br&gt;配置了passport-http-bearer做为token的实现,&lt;br&gt;然而出现了坑,&lt;br&gt;摊手。&lt;/p&gt;
-&lt;p&gt;在谷歌上查了几个答案就不行,&lt;br&gt;遂,&lt;br&gt;翻开源码直接看。&lt;
+          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h2&gt;&lt;p&gt;是不是有人在commit前不lint，&lt;br&gt;导致推送了垃圾代码？&lt;br&gt;那我们就让你不lint就commit不了。&lt;/p&gt;
+&lt;h2
         
       
     
@@ -249,8 +302,8 @@
   
   <entry>
     <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nginx/nginx/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Nginx/nginx/</id>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/%E4%BD%BF%E7%94%A8http-server%E5%88%9B%E5%BB%BA%E4%B8%B4%E6%97%B6%E6%9C%8D%E5%8A%A1/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/使用http-server创建临时服务/</id>
     <published>2017-10-04T02:17:03.000Z</published>
     <updated>2017-10-04T02:17:03.000Z</updated>
     
@@ -260,8 +313,29 @@
       
         
         
-          &lt;h2 id=&quot;开头&quot;&gt;&lt;a href=&quot;#开头&quot; class=&quot;headerlink&quot; title=&quot;开头&quot;&gt;&lt;/a&gt;开头&lt;/h2&gt;&lt;p&gt;Nginx入门可以看看这篇，&lt;br&gt;主要是学一些基本的用法。&lt;/p&gt;
-&lt;h2 id=&quot;安装运行&quot;&gt;&lt;a href=&quot;#安装运行&quot;
+          &lt;p&gt;有这么一个场景，&lt;br&gt;你从别处弄来了一个工程，&lt;br&gt;里面塞满了html文件，&lt;br&gt;此时你需要看看这个工程是什么样的，&lt;br&gt;于是你随便打开了一个html文件，&lt;br&gt;发现整个网页是乱七八糟的，&lt;br&gt;没有CSS也没有JS，&lt;br&gt;因为你打开的方式是file而不是htt
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/%E4%BD%BF%E7%94%A8mkdirp%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/使用mkdirp创建文件夹/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot;
         
       
     
@@ -322,6 +396,29 @@
   
   <entry>
     <title></title>
+    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/passport-http-bearer/"/>
+    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/passport-http-bearer/</id>
+    <published>2017-10-04T02:17:03.000Z</published>
+    <updated>2017-10-04T02:17:03.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;给博客服务端写token的验证服务,&lt;br&gt;使用了passport作为处理工具,&lt;br&gt;配置了passport-http-bearer做为token的实现,&lt;br&gt;然而出现了坑,&lt;br&gt;摊手。&lt;/p&gt;
+&lt;p&gt;在谷歌上查了几个答案就不行,&lt;br&gt;遂,&lt;br&gt;翻开源码直接看。&lt;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
     <link href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/take/"/>
     <id>http://limichange.uedtoutiao.com/2017/10/04/Rx.js/take/</id>
     <published>2017-10-04T02:17:03.000Z</published>
@@ -367,28 +464,6 @@
   
   <entry>
     <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/defer/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Rx.js/defer/</id>
-    <published>2017-10-04T02:17:03.000Z</published>
-    <updated>2017-10-04T02:17:03.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;defer&quot;&gt;&lt;a href=&quot;#defer&quot; class=&quot;headerlink&quot; title=&quot;defer&quot;&gt;&lt;/a&gt;defer&lt;/h2&gt;&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
     <link href="http://limichange.uedtoutiao.com/2017/10/04/Git/Git%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E7%9A%84%E4%B8%AD%E6%96%87/"/>
     <id>http://limichange.uedtoutiao.com/2017/10/04/Git/Git命令行中的中文/</id>
     <published>2017-10-04T02:17:03.000Z</published>
@@ -412,50 +487,6 @@
   
   <entry>
     <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Nodejs/%E4%BD%BF%E7%94%A8http-server%E5%88%9B%E5%BB%BA%E4%B8%B4%E6%97%B6%E6%9C%8D%E5%8A%A1/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Nodejs/使用http-server创建临时服务/</id>
-    <published>2017-10-04T02:17:03.000Z</published>
-    <updated>2017-10-04T02:17:03.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;有这么一个场景，&lt;br&gt;你从别处弄来了一个工程，&lt;br&gt;里面塞满了html文件，&lt;br&gt;此时你需要看看这个工程是什么样的，&lt;br&gt;于是你随便打开了一个html文件，&lt;br&gt;发现整个网页是乱七八糟的，&lt;br&gt;没有CSS也没有JS，&lt;br&gt;因为你打开的方式是file而不是htt
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/Github/%E6%8F%90%E9%80%9F/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/Github/提速/</id>
-    <published>2017-10-04T02:17:03.000Z</published>
-    <updated>2017-10-04T02:17:03.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
     <link href="http://limichange.uedtoutiao.com/2017/10/04/Rx.js/empty/"/>
     <id>http://limichange.uedtoutiao.com/2017/10/04/Rx.js/empty/</id>
     <published>2017-10-04T02:17:03.000Z</published>
@@ -468,29 +499,6 @@
         
         
           &lt;h2 id=&quot;empty&quot;&gt;&lt;a href=&quot;#empty&quot; class=&quot;headerlink&quot; title=&quot;empty&quot;&gt;&lt;/a&gt;empty&lt;/h2&gt;&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://limichange.uedtoutiao.com/2017/10/04/JavaSript/async&amp;await/"/>
-    <id>http://limichange.uedtoutiao.com/2017/10/04/JavaSript/async&amp;await/</id>
-    <published>2017-10-04T02:17:03.000Z</published>
-    <updated>2017-10-04T02:17:03.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;场景&quot;&gt;&lt;a href=&quot;#场景&quot; class=&quot;headerlink&quot; title=&quot;场景&quot;&gt;&lt;/a&gt;场景&lt;/h2&gt;&lt;p&gt;异步流程优化。&lt;/p&gt;
-&lt;h2 id=&quot;例子&quot;&gt;&lt;a href=&quot;#例子&quot; class=&quot;headerlink&quot;
         
       
     

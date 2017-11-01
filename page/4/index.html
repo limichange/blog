@@ -288,6 +288,254 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/08/08/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Limichange">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Limichange Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/08/README/" itemprop="url">test</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-08T15:27:03+08:00">
+                2017-08-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="⛩-Limichange-Blog"><a href="#⛩-Limichange-Blog" class="headerlink" title="⛩ Limichange Blog"></a>⛩ Limichange Blog</h1><blockquote>
+<p>老是胃疼</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/04/30/Mysql/The server quit without updating PID file/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Limichange">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Limichange Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/04/30/Mysql/The server quit without updating PID file/" itemprop="url">Mac启动Mysql的时候产生报错</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-30T10:48:11+08:00">
+                2017-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这是一个在Mac启动Mysql的时候产生的一个报错。</p>
+<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>查看此文件的详情<br>/usr/local/var/mysql/your_computer_name.local.err</p>
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>查看是否正在运行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> ps -ef | grep mysql</span></div></pre></td></tr></table></figure></p>
+<p>停止服务<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">kill</span> -9 PID</span></div></pre></td></tr></table></figure></p>
+<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><p>查看权限<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> ls -laF /usr/<span class="built_in">local</span>/var/mysql/</span></div></pre></td></tr></table></figure></p>
+<p>修改执行的权限<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> sudo chown -R mysql /usr/<span class="built_in">local</span>/var/mysql/</span></div></pre></td></tr></table></figure></p>
+<h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><p>重新运行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span><span class="bash"> mysql.server start</span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/02/06/BTW/2017-02-06/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -655,129 +903,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/01/01/Yarn/正确设置源的地址/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Limichange">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Limichange Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/01/01/Yarn/正确设置源的地址/" itemprop="url">正确设置源的地址</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-01T10:48:11+08:00">
-                2017-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>往github上传项目，<br>传送到CI做集成，<br>发现安装npm出错。</p>
-<p>发现了蛋疼的问题，<br>由于yarn是自动锁包的，<br>所以CI就跑去下载淘宝的源了，<br>然后就报错了。</p>
-<p>所以说yarn是根据npm的源来操作的，<br>这个需求很合理，<br>但国内就很难过了。</p>
-<p>最后的解决就是我VPN了，<br>解决了几乎所有的源的问题，<br>一了百了。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/01/01/Nodejs/qrcode-terminal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -853,6 +978,129 @@
 <p><a href="https://github.com/gtanner/qrcode-terminal" target="_blank" rel="external">https://github.com/gtanner/qrcode-terminal</a></p>
 <h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ npm install qrcode-terminal</div><div class="line">or</div><div class="line">$ yarn add qrcode-terminal</div></pre></td></tr></table></figure>
 <h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">qrcode.generate(<span class="string">'This will be a QRCode, eh!'</span>)</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2017/01/01/Yarn/正确设置源的地址/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Limichange">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Limichange Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/01/Yarn/正确设置源的地址/" itemprop="url">正确设置源的地址</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-01T10:48:11+08:00">
+                2017-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>往github上传项目，<br>传送到CI做集成，<br>发现安装npm出错。</p>
+<p>发现了蛋疼的问题，<br>由于yarn是自动锁包的，<br>所以CI就跑去下载淘宝的源了，<br>然后就报错了。</p>
+<p>所以说yarn是根据npm的源来操作的，<br>这个需求很合理，<br>但国内就很难过了。</p>
+<p>最后的解决就是我VPN了，<br>解决了几乎所有的源的问题，<br>一了百了。</p>
 
           
         
@@ -1272,258 +1520,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2016/12/12/JavaSript/find&filter/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Limichange">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Limichange Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/12/JavaSript/find&filter/" itemprop="url">find 和 filter</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-12T19:42:02+08:00">
-                2016-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>从数组中根据条件过滤结果。</p>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="Find"><a href="#Find" class="headerlink" title="Find"></a>Find</h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">element</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> element &gt;= <span class="number">15</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">[<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].find(isBigEnough); <span class="comment">// 130</span></div></pre></td></tr></table></figure>
-<h3 id="Filter"><a href="#Filter" class="headerlink" title="Filter"></a>Filter</h3><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">isBigEnough</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> value &gt;= <span class="number">10</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> filtered = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].filter(isBigEnough);</div><div class="line"><span class="comment">// filtered is [12, 130, 44]</span></div></pre></td></tr></table></figure>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>一个返回数组，<br>一个返回第一个结果。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://limichange.uedtoutiao.com/2016/12/06/Tool/使用asciinema录制命令行/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Limichange">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Limichange Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/12/06/Tool/使用asciinema录制命令行/" itemprop="url">asciinema</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-06T13:13:42+08:00">
-                2016-12-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>有时候我们需要分享一个操作的过程，<br>这个过程用文字来表示的话会有些抽象，<br>而录像的成本又太高了，<br>这个时候<code>asciinema</code>会帮到你。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install asciinema</div></pre></td></tr></table></figure>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>用下面的命令开始录制，<br>结束的时候用<code>Ctrl-D</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ asciinema rec</div><div class="line">~ Asciicast recording started.</div><div class="line">~ Hit Ctrl-D or <span class="built_in">type</span> <span class="string">"exit"</span> to finish.</div></pre></td></tr></table></figure></p>
-<p>结束后会给你一个地址，<br>如<code>https://asciinema.org/a/6j0amorx7tm217lhh1zme1ayc</code>，<br>上去可以看到实际的效果，<br>选择自己的合适的分享方式就可以了。</p>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><a href="https://asciinema.org/a/6j0amorx7tm217lhh1zme1ayc" target="_blank" rel="external"><img src="https://asciinema.org/a/6j0amorx7tm217lhh1zme1ayc.png" alt="点击查看"></a></p>
-<h2 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h2><ul>
-<li><a href="https://asciinema.org/" target="_blank" rel="external">https://asciinema.org/</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1574,7 +1570,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1587,7 +1583,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">tags</span>
                 
               </div>
